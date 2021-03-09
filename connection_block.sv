@@ -1,5 +1,5 @@
 parameter channel_width = 8;
-//note not everything is parameterized for ease of reading
+ 
 
 module vertical_channel (
     input  logic[channel_width/2-1:0] top_in,
