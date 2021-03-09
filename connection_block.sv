@@ -1,12 +1,14 @@
 parameter channel_width = 8;
- 
+//note not everything is parameterized for ease of reading
 
 module vertical_channel (
     input  logic[channel_width/2-1:0] top_in,
     input  logic[channel_width/2-1:0] bottom_in,
     output logic[channel_width/2-1:0] top_out,
     output logic[channel_width/2-1:0] bottom_out,
-    output logic left_clb_in1, right_clb_in3
+    output logic left_clb_in1, right_clb_in3,
+    input logic scan_in, scan_en, scan_clk,
+    output logic scan_out
 );
     wire[channel_width:0] channel;
     //所有编号都是从左往右 从上到下
@@ -28,10 +30,12 @@ module vertical_channel (
     assign    top_out[3] = channel[6];
     assign bottom_out[3] = channel[7];
     
-    //TODO: add memory cells here and assign ctrl signals to memory
     logic[channel_width/2-1:0] ctrl1, ctrl3;
-    
-    //tg1_0 means the connection from clb port1 to channel 0
+    logic scan_conn;
+    ROM tg_ctrl_1(.out(ctrl1),.scan_in(scan_in),.scan_out(scan_conn),.scan_en(scan_en),.scan_clk(scan_clk));
+    ROM tg_ctrl_3(.out(ctrl3),.scan_in(scan_conn),.scan_out(scan_out),.scan_en(scan_en),.scan_clk(scan_clk));
+
+    //tg1_0 means the connection from clb channel 0 to port 1
     tg tg1_0(.control(ctrl1[0]),.in(channel[0]),.out(left_clb_in1));
     tg tg1_1(.control(ctrl1[1]),.in(channel[1]),.out(left_clb_in1));
     tg tg1_4(.control(ctrl1[2]),.in(channel[4]),.out(left_clb_in1));
@@ -48,7 +52,9 @@ module horizontal_channel (
     input  logic[channel_width/2-1:0] right_in,
     output logic[channel_width/2-1:0] left_out,
     output logic[channel_width/2-1:0] right_out,
-    output logic top_clb_in2, bottom_clb_in0, bottom_clb_in4
+    output logic top_clb_in2, bottom_clb_in0, bottom_clb_in4,
+    input logic scan_in, scan_en, scan_clk,
+    output logic scan_out
 );
     logic[channel_width:0] channel;
     //所有编号都是从左往右 从上到下
@@ -61,8 +67,12 @@ module horizontal_channel (
     assign channel[6] = right_in[3];
     assign channel[7] =  left_in[3];
     
-    //TODO: add memory cells here and assign ctrl signals to memory
     logic[channel_width/2-1:0] ctrl0, ctrl2, ctrl4;
+    logic scan_conn1,scan_conn2;
+    ROM tg_ctrl_0(.out(ctrl0),.scan_in(scan_in),.scan_out(scan_conn1),.scan_en(scan_en),.scan_clk(scan_clk));
+    ROM tg_ctrl_2(.out(ctrl2),.scan_in(scan_conn1),.scan_out(scan_conn2),.scan_en(scan_en),.scan_clk(scan_clk));
+    ROM tg_ctrl_4(.out(ctrl4),.scan_in(scan_conn2),.scan_out(scan_out),.scan_en(scan_en),.scan_clk(scan_clk));
+
 
     tg tg0_2(.control(ctrl0[0]),.in(channel[2]),.out(bottom_clb_in0));
     tg tg0_3(.control(ctrl0[1]),.in(channel[3]),.out(bottom_clb_in0));
@@ -81,13 +91,32 @@ module horizontal_channel (
 endmodule
 
 //transmission gate
-module tg  (
+module tg (
     input logic control,
-    input wire in,
-    output wire out
+    input logic in,
+    output logic out
 );
-    wire control_inv;
-    assign control_inv = control;
-    nmos n1 (out, in, control);
-    pmos p1 (out, in, control_inv);
+    always_comb begin
+        if(control)
+            out = in;
+        else 
+            out = 1'bX;
+    end
+endmodule
+
+//Programmable ROM via scan chain
+module ROM ( 
+    input logic scan_in, scan_clk, scan_en,
+    output logic scan_out,
+    output logic [3:0] out
+);
+    reg [3:0] data;
+    always_ff @(posedge scan_clk) begin
+        if(scan_en) 
+            data <= {data[2:0],scan_in};
+        else
+            data <= data;
+    end 
+    assign out = data;
+    assign scan_out = data[3];
 endmodule
