@@ -1,4 +1,4 @@
-module tb ();
+module cb_tb ();
     logic[3:0] top_in, top_out, bottom_in, bottom_out, left_in, left_out, right_in, right_out;
     logic scan_clk, scan_en, scan_in_vc, scan_in_hc, scan_out;
     logic out0, out1, out2, out3, out4;

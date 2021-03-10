@@ -32,8 +32,8 @@ module vertical_channel (
     
     logic[channel_width/2-1:0] ctrl1, ctrl3;
     logic scan_conn;
-    ROM tg_ctrl_1(.out(ctrl1),.scan_in(scan_in),.scan_out(scan_conn),.scan_en(scan_en),.scan_clk(scan_clk));
-    ROM tg_ctrl_3(.out(ctrl3),.scan_in(scan_conn),.scan_out(scan_out),.scan_en(scan_en),.scan_clk(scan_clk));
+    ROM #(.width(4)) tg_ctrl_1 (.out(ctrl1),.scan_in(scan_in),.scan_out(scan_conn),.scan_en(scan_en),.scan_clk(scan_clk));
+    ROM #(.width(4)) tg_ctrl_3 (.out(ctrl3),.scan_in(scan_conn),.scan_out(scan_out),.scan_en(scan_en),.scan_clk(scan_clk));
 
     //tg1_0 means the connection from clb channel 0 to port 1
     tg tg1_0(.control(ctrl1[0]),.in(channel[0]),.out(left_clb_in1));
@@ -105,18 +105,20 @@ module tg (
 endmodule
 
 //Programmable ROM via scan chain
-module ROM ( 
+module ROM #(
+    parameter width = 4
+) ( 
     input logic scan_in, scan_clk, scan_en,
     output logic scan_out,
-    output logic [3:0] out
+    output logic [width-1:0] out
 );
-    reg [3:0] data;
+    reg [width-1:0] data;
     always_ff @(posedge scan_clk) begin
         if(scan_en) 
-            data <= {data[2:0],scan_in};
+            data <= {data[width-2:0],scan_in};
         else
             data <= data;
     end 
     assign out = data;
-    assign scan_out = data[3];
+    assign scan_out = data[width-1];
 endmodule
