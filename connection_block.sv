@@ -30,21 +30,14 @@ module vertical_channel (
     assign    top_out[3] = channel[6];
     assign bottom_out[3] = channel[7];
     
-    logic[channel_width/2-1:0] ctrl1, ctrl3;
+    logic[1:0] ctrl1, ctrl3;
     logic scan_conn;
-    ROM #(.width(4)) tg_ctrl_1 (.out(ctrl1),.scan_in(scan_in),.scan_out(scan_conn),.scan_en(scan_en),.scan_clk(scan_clk));
-    ROM #(.width(4)) tg_ctrl_3 (.out(ctrl3),.scan_in(scan_conn),.scan_out(scan_out),.scan_en(scan_en),.scan_clk(scan_clk));
+    ROM #(.width(2)) tg_ctrl_1 (.out(ctrl1),.scan_in(scan_in),.scan_out(scan_conn),.scan_en(scan_en),.scan_clk(scan_clk));
+    ROM #(.width(2)) tg_ctrl_3 (.out(ctrl3),.scan_in(scan_conn),.scan_out(scan_out),.scan_en(scan_en),.scan_clk(scan_clk));
 
-    //tg1_0 means the connection from clb channel 0 to port 1
-    tg tg1_0(.control(ctrl1[0]),.in(channel[0]),.out(left_clb_in1));
-    tg tg1_1(.control(ctrl1[1]),.in(channel[1]),.out(left_clb_in1));
-    tg tg1_4(.control(ctrl1[2]),.in(channel[4]),.out(left_clb_in1));
-    tg tg1_5(.control(ctrl1[3]),.in(channel[5]),.out(left_clb_in1));
+    MUX4 out1_mux(.control(ctrl1),.in({channel[5],channel[4],channel[1],channel[0]}),.out(left_clb_in1));
+    MUX4 out3_mux(.control(ctrl3),.in({channel[7],channel[6],channel[3],channel[2]}),.out(right_clb_in3));
 
-    tg tg3_2(.control(ctrl3[0]),.in(channel[2]),.out(right_clb_in3));
-    tg tg3_3(.control(ctrl3[1]),.in(channel[3]),.out(right_clb_in3));
-    tg tg3_6(.control(ctrl3[2]),.in(channel[6]),.out(right_clb_in3));
-    tg tg3_7(.control(ctrl3[3]),.in(channel[7]),.out(right_clb_in3));
 endmodule
 
 module horizontal_channel (
@@ -52,7 +45,7 @@ module horizontal_channel (
     input  logic[channel_width/2-1:0] right_in,
     output logic[channel_width/2-1:0] left_out,
     output logic[channel_width/2-1:0] right_out,
-    output logic top_clb_in2, bottom_clb_in0, bottom_clb_in4,
+    output logic top_clb_in2, bottom_clb_in0, 
     input logic scan_in, scan_en, scan_clk,
     output logic scan_out
 );
@@ -66,47 +59,41 @@ module horizontal_channel (
     assign channel[5] =  left_in[2];
     assign channel[6] = right_in[3];
     assign channel[7] =  left_in[3];
+
+    assign  left_out[0] = channel[0];
+    assign right_out[0] = channel[1];
+    assign  left_out[1] = channel[2];
+    assign right_out[1] = channel[3];
+    assign  left_out[2] = channel[4];
+    assign right_out[2] = channel[5];
+    assign  left_out[3] = channel[6];
+    assign right_out[3] = channel[7];
     
-    logic[channel_width/2-1:0] ctrl0, ctrl2, ctrl4;
-    logic scan_conn1,scan_conn2;
-    ROM tg_ctrl_0(.out(ctrl0),.scan_in(scan_in),.scan_out(scan_conn1),.scan_en(scan_en),.scan_clk(scan_clk));
-    ROM tg_ctrl_2(.out(ctrl2),.scan_in(scan_conn1),.scan_out(scan_conn2),.scan_en(scan_en),.scan_clk(scan_clk));
-    ROM tg_ctrl_4(.out(ctrl4),.scan_in(scan_conn2),.scan_out(scan_out),.scan_en(scan_en),.scan_clk(scan_clk));
+    logic[1:0] ctrl0, ctrl2;
+    logic scan_conn;
+    ROM #(.width(2)) tg_ctrl_0(.out(ctrl0),.scan_in(scan_in),.scan_out(scan_conn),.scan_en(scan_en),.scan_clk(scan_clk));
+    ROM #(.width(2)) tg_ctrl_2(.out(ctrl2),.scan_in(scan_conn),.scan_out(scan_out),.scan_en(scan_en),.scan_clk(scan_clk));
+
+    MUX4 out0_mux(.control(ctrl0),.in({channel[7],channel[6],channel[3],channel[2]}),.out(bottom_clb_in0));
+    MUX4 out2_mux(.control(ctrl2),.in({channel[5],channel[4],channel[1],channel[0]}),.out(top_clb_in2));
 
 
-    tg tg0_2(.control(ctrl0[0]),.in(channel[2]),.out(bottom_clb_in0));
-    tg tg0_3(.control(ctrl0[1]),.in(channel[3]),.out(bottom_clb_in0));
-    tg tg0_6(.control(ctrl0[2]),.in(channel[6]),.out(bottom_clb_in0));
-    tg tg0_7(.control(ctrl0[3]),.in(channel[7]),.out(bottom_clb_in0));
-
-    tg tg2_2(.control(ctrl2[0]),.in(channel[2]),.out(top_clb_in2));
-    tg tg2_3(.control(ctrl2[1]),.in(channel[3]),.out(top_clb_in2));
-    tg tg2_6(.control(ctrl2[2]),.in(channel[6]),.out(top_clb_in2));
-    tg tg2_7(.control(ctrl2[3]),.in(channel[7]),.out(top_clb_in2));
-
-    tg tg4_0(.control(ctrl4[0]),.in(channel[0]),.out(bottom_clb_in4));
-    tg tg4_1(.control(ctrl4[1]),.in(channel[1]),.out(bottom_clb_in4));
-    tg tg4_4(.control(ctrl4[2]),.in(channel[4]),.out(bottom_clb_in4));
-    tg tg4_5(.control(ctrl4[3]),.in(channel[5]),.out(bottom_clb_in4 ));
 endmodule
 
-//transmission gate
-module tg (
-    input logic control,
-    input logic in,
+//MUX4 used instead of transmission gate
+module MUX4 (
+    input logic [1:0] control,
+    input logic [3:0] in,
     output logic out
 );
-    always_comb begin
-        if(control)
-            out = in;
-        else 
-            out = 1'bX;
-    end
+    assign out = in[control];
+
 endmodule
+
 
 //Programmable ROM via scan chain
 module ROM #(
-    parameter width = 4
+    parameter width = 2
 ) ( 
     input logic scan_in, scan_clk, scan_en,
     output logic scan_out,
