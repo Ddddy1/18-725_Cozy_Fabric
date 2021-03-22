@@ -1,0 +1,437 @@
+
+.model dual_port_RAM 
+
+.inputs dual_port_RAM^clk dual_port_RAM^we dual_port_RAM^addr_wr~0 dual_port_RAM^addr_wr~1 dual_port_RAM^addr_rd~0 \
+ dual_port_RAM^addr_rd~1 dual_port_RAM^din~0 dual_port_RAM^din~1 dual_port_RAM^din~2 
+
+.outputs dual_port_RAM^dout~0 dual_port_RAM^dout~1 dual_port_RAM^dout~2 
+
+
+.names gnd 
+
+.names unconn 
+
+.names vcc 
+1 
+
+
+.names dual_port_RAM^lEQ~2^lAND~98 dual_port_RAM^nMUX~1^lNOT~3 dual_port_RAM^addr_wr~0 gnd dual_port_RAM^nMUX~1^MUX_2~91 
+1-1- 1 
+-1-1 1 
+
+
+.names dual_port_RAM^nMUX~1^MUX_2~91 dual_port_RAM.ram_dual_port^lNOT~13 
+0 1 
+
+
+.names dual_port_RAM.ram_dual_port^lNOT~13 dual_port_RAM.ram_dual_port^lNOT~14 dual_port_RAM.ram_dual_port^lAND~15 
+11 1 
+
+
+.names dual_port_RAM.ram_dual_port^lAND~15 dual_port_RAM^nMUX~1^MUX_2~96 dual_port_RAM.ram_dual_port^lAND~20 
+11 1 
+
+
+.names dual_port_RAM.ram_dual_port^lAND~19 dual_port_RAM.ram_dual_port^lAND~20 dual_port_RAM.ram_dual_port^lOR~21 
+1- 1 
+-1 1 
+
+
+.names dual_port_RAM.ram_dual_port^lOR~21 dual_port_RAM.ram_dual_port^lNOT~34 
+0 1 
+
+
+.names dual_port_RAM.ram_dual_port^lOR~21 dual_port_RAM.ram_dual_port^lNOT~34 dual_port_RAM.ram_dual_port^MUX_2~33 \
+ dual_port_RAM.ram_dual_port^FF~36 dual_port_RAM.ram_dual_port^MUX_2~35 
+1-1- 1 
+-1-1 1 
+
+
+.latch dual_port_RAM.ram_dual_port^MUX_2~35 dual_port_RAM.ram_dual_port^FF~36 re dual_port_RAM^clk 0 
+
+
+.names dual_port_RAM.ram_dual_port^lAND~9 dual_port_RAM.ram_dual_port^lAND~10 dual_port_RAM.ram_dual_port^lAND~11 \
+ dual_port_RAM.ram_dual_port^lAND~12 dual_port_RAM.ram_dual_port^FF~36 dual_port_RAM.ram_dual_port^FF~40 \
+ dual_port_RAM.ram_dual_port^FF~44 dual_port_RAM.ram_dual_port^FF~48 dual_port_RAM.ram_dual_port^nMUX~31^MUX_2~49 
+1---1--- 1 
+-1---1-- 1 
+--1---1- 1 
+---1---1 1 
+
+
+.names dual_port_RAM.ram_dual_port^lOR~21 dual_port_RAM.ram_dual_port^lNOT~54 
+0 1 
+
+
+.names dual_port_RAM.ram_dual_port^lOR~21 dual_port_RAM.ram_dual_port^lNOT~54 dual_port_RAM.ram_dual_port^MUX_2~53 \
+ dual_port_RAM.ram_dual_port^FF~56 dual_port_RAM.ram_dual_port^MUX_2~55 
+1-1- 1 
+-1-1 1 
+
+
+.latch dual_port_RAM.ram_dual_port^MUX_2~55 dual_port_RAM.ram_dual_port^FF~56 re dual_port_RAM^clk 0 
+
+
+.names dual_port_RAM.ram_dual_port^lAND~9 dual_port_RAM.ram_dual_port^lAND~10 dual_port_RAM.ram_dual_port^lAND~11 \
+ dual_port_RAM.ram_dual_port^lAND~12 dual_port_RAM.ram_dual_port^FF~56 dual_port_RAM.ram_dual_port^FF~60 \
+ dual_port_RAM.ram_dual_port^FF~64 dual_port_RAM.ram_dual_port^FF~68 dual_port_RAM.ram_dual_port^nMUX~51^MUX_2~69 
+1---1--- 1 
+-1---1-- 1 
+--1---1- 1 
+---1---1 1 
+
+
+.names dual_port_RAM.ram_dual_port^lOR~21 dual_port_RAM.ram_dual_port^lNOT~74 
+0 1 
+
+
+.names dual_port_RAM.ram_dual_port^lOR~21 dual_port_RAM.ram_dual_port^lNOT~74 dual_port_RAM.ram_dual_port^MUX_2~73 \
+ dual_port_RAM.ram_dual_port^FF~76 dual_port_RAM.ram_dual_port^MUX_2~75 
+1-1- 1 
+-1-1 1 
+
+
+.latch dual_port_RAM.ram_dual_port^MUX_2~75 dual_port_RAM.ram_dual_port^FF~76 re dual_port_RAM^clk 0 
+
+
+.names dual_port_RAM.ram_dual_port^lAND~9 dual_port_RAM.ram_dual_port^lAND~10 dual_port_RAM.ram_dual_port^lAND~11 \
+ dual_port_RAM.ram_dual_port^lAND~12 dual_port_RAM.ram_dual_port^FF~76 dual_port_RAM.ram_dual_port^FF~80 \
+ dual_port_RAM.ram_dual_port^FF~84 dual_port_RAM.ram_dual_port^FF~88 dual_port_RAM.ram_dual_port^nMUX~71^MUX_2~89 
+1---1--- 1 
+-1---1-- 1 
+--1---1- 1 
+---1---1 1 
+
+
+.names dual_port_RAM.ram_dual_port^lAND~20 dual_port_RAM.ram_dual_port^lAND~19 dual_port_RAM^nMUX~1^MUX_2~93 gnd \
+ dual_port_RAM.ram_dual_port^MUX_2~33 
+1-1- 1 
+-1-1 1 
+
+
+.names dual_port_RAM.ram_dual_port^lAND~20 dual_port_RAM.ram_dual_port^lAND~19 dual_port_RAM^nMUX~1^MUX_2~94 gnd \
+ dual_port_RAM.ram_dual_port^MUX_2~53 
+1-1- 1 
+-1-1 1 
+
+
+.names dual_port_RAM.ram_dual_port^lAND~20 dual_port_RAM.ram_dual_port^lAND~19 dual_port_RAM^nMUX~1^MUX_2~95 gnd \
+ dual_port_RAM.ram_dual_port^MUX_2~73 
+1-1- 1 
+-1-1 1 
+
+
+.names dual_port_RAM.ram_dual_port^lNOT~13 dual_port_RAM^nMUX~1^MUX_2~92 dual_port_RAM.ram_dual_port^lAND~17 
+11 1 
+
+
+.names dual_port_RAM.ram_dual_port^lAND~17 dual_port_RAM^nMUX~1^MUX_2~96 dual_port_RAM.ram_dual_port^lAND~26 
+11 1 
+
+
+.names dual_port_RAM.ram_dual_port^lAND~25 dual_port_RAM.ram_dual_port^lAND~26 dual_port_RAM.ram_dual_port^lOR~27 
+1- 1 
+-1 1 
+
+
+.names dual_port_RAM.ram_dual_port^lOR~27 dual_port_RAM.ram_dual_port^lNOT~42 
+0 1 
+
+
+.names dual_port_RAM.ram_dual_port^lOR~27 dual_port_RAM.ram_dual_port^lNOT~42 dual_port_RAM.ram_dual_port^MUX_2~41 \
+ dual_port_RAM.ram_dual_port^FF~44 dual_port_RAM.ram_dual_port^MUX_2~43 
+1-1- 1 
+-1-1 1 
+
+
+.latch dual_port_RAM.ram_dual_port^MUX_2~43 dual_port_RAM.ram_dual_port^FF~44 re dual_port_RAM^clk 0 
+
+
+.names dual_port_RAM.ram_dual_port^lOR~27 dual_port_RAM.ram_dual_port^lNOT~62 
+0 1 
+
+
+.names dual_port_RAM.ram_dual_port^lOR~27 dual_port_RAM.ram_dual_port^lNOT~62 dual_port_RAM.ram_dual_port^MUX_2~61 \
+ dual_port_RAM.ram_dual_port^FF~64 dual_port_RAM.ram_dual_port^MUX_2~63 
+1-1- 1 
+-1-1 1 
+
+
+.latch dual_port_RAM.ram_dual_port^MUX_2~63 dual_port_RAM.ram_dual_port^FF~64 re dual_port_RAM^clk 0 
+
+
+.names dual_port_RAM.ram_dual_port^lOR~27 dual_port_RAM.ram_dual_port^lNOT~82 
+0 1 
+
+
+.names dual_port_RAM.ram_dual_port^lOR~27 dual_port_RAM.ram_dual_port^lNOT~82 dual_port_RAM.ram_dual_port^MUX_2~81 \
+ dual_port_RAM.ram_dual_port^FF~84 dual_port_RAM.ram_dual_port^MUX_2~83 
+1-1- 1 
+-1-1 1 
+
+
+.latch dual_port_RAM.ram_dual_port^MUX_2~83 dual_port_RAM.ram_dual_port^FF~84 re dual_port_RAM^clk 0 
+
+
+.names dual_port_RAM.ram_dual_port^lAND~26 dual_port_RAM.ram_dual_port^lAND~25 dual_port_RAM^nMUX~1^MUX_2~93 gnd \
+ dual_port_RAM.ram_dual_port^MUX_2~41 
+1-1- 1 
+-1-1 1 
+
+
+.names dual_port_RAM.ram_dual_port^lAND~26 dual_port_RAM.ram_dual_port^lAND~25 dual_port_RAM^nMUX~1^MUX_2~94 gnd \
+ dual_port_RAM.ram_dual_port^MUX_2~61 
+1-1- 1 
+-1-1 1 
+
+
+.names dual_port_RAM.ram_dual_port^lAND~26 dual_port_RAM.ram_dual_port^lAND~25 dual_port_RAM^nMUX~1^MUX_2~95 gnd \
+ dual_port_RAM.ram_dual_port^MUX_2~81 
+1-1- 1 
+-1-1 1 
+
+
+.names dual_port_RAM^nMUX~1^MUX_2~91 dual_port_RAM^nMUX~1^MUX_2~92 dual_port_RAM.ram_dual_port^lAND~18 
+11 1 
+
+
+.names dual_port_RAM.ram_dual_port^lAND~18 dual_port_RAM^nMUX~1^MUX_2~96 dual_port_RAM.ram_dual_port^lAND~29 
+11 1 
+
+
+.names dual_port_RAM.ram_dual_port^lAND~28 dual_port_RAM.ram_dual_port^lAND~29 dual_port_RAM.ram_dual_port^lOR~30 
+1- 1 
+-1 1 
+
+
+.names dual_port_RAM.ram_dual_port^lOR~30 dual_port_RAM.ram_dual_port^lNOT~46 
+0 1 
+
+
+.names dual_port_RAM.ram_dual_port^lOR~30 dual_port_RAM.ram_dual_port^lNOT~46 dual_port_RAM.ram_dual_port^MUX_2~45 \
+ dual_port_RAM.ram_dual_port^FF~48 dual_port_RAM.ram_dual_port^MUX_2~47 
+1-1- 1 
+-1-1 1 
+
+
+.latch dual_port_RAM.ram_dual_port^MUX_2~47 dual_port_RAM.ram_dual_port^FF~48 re dual_port_RAM^clk 0 
+
+
+.names dual_port_RAM.ram_dual_port^lOR~30 dual_port_RAM.ram_dual_port^lNOT~66 
+0 1 
+
+
+.names dual_port_RAM.ram_dual_port^lOR~30 dual_port_RAM.ram_dual_port^lNOT~66 dual_port_RAM.ram_dual_port^MUX_2~65 \
+ dual_port_RAM.ram_dual_port^FF~68 dual_port_RAM.ram_dual_port^MUX_2~67 
+1-1- 1 
+-1-1 1 
+
+
+.latch dual_port_RAM.ram_dual_port^MUX_2~67 dual_port_RAM.ram_dual_port^FF~68 re dual_port_RAM^clk 0 
+
+
+.names dual_port_RAM.ram_dual_port^lOR~30 dual_port_RAM.ram_dual_port^lNOT~86 
+0 1 
+
+
+.names dual_port_RAM.ram_dual_port^lOR~30 dual_port_RAM.ram_dual_port^lNOT~86 dual_port_RAM.ram_dual_port^MUX_2~85 \
+ dual_port_RAM.ram_dual_port^FF~88 dual_port_RAM.ram_dual_port^MUX_2~87 
+1-1- 1 
+-1-1 1 
+
+
+.latch dual_port_RAM.ram_dual_port^MUX_2~87 dual_port_RAM.ram_dual_port^FF~88 re dual_port_RAM^clk 0 
+
+
+.names dual_port_RAM.ram_dual_port^lAND~29 dual_port_RAM.ram_dual_port^lAND~28 dual_port_RAM^nMUX~1^MUX_2~93 gnd \
+ dual_port_RAM.ram_dual_port^MUX_2~45 
+1-1- 1 
+-1-1 1 
+
+
+.names dual_port_RAM.ram_dual_port^lAND~29 dual_port_RAM.ram_dual_port^lAND~28 dual_port_RAM^nMUX~1^MUX_2~94 gnd \
+ dual_port_RAM.ram_dual_port^MUX_2~65 
+1-1- 1 
+-1-1 1 
+
+
+.names dual_port_RAM.ram_dual_port^lAND~29 dual_port_RAM.ram_dual_port^lAND~28 dual_port_RAM^nMUX~1^MUX_2~95 gnd \
+ dual_port_RAM.ram_dual_port^MUX_2~85 
+1-1- 1 
+-1-1 1 
+
+
+.names dual_port_RAM^nMUX~1^MUX_2~91 dual_port_RAM.ram_dual_port^lNOT~14 dual_port_RAM.ram_dual_port^lAND~16 
+11 1 
+
+
+.names dual_port_RAM.ram_dual_port^lAND~16 dual_port_RAM^nMUX~1^MUX_2~96 dual_port_RAM.ram_dual_port^lAND~23 
+11 1 
+
+
+.names dual_port_RAM.ram_dual_port^lAND~22 dual_port_RAM.ram_dual_port^lAND~23 dual_port_RAM.ram_dual_port^lOR~24 
+1- 1 
+-1 1 
+
+
+.names dual_port_RAM.ram_dual_port^lOR~24 dual_port_RAM.ram_dual_port^lNOT~38 
+0 1 
+
+
+.names dual_port_RAM.ram_dual_port^lOR~24 dual_port_RAM.ram_dual_port^lNOT~38 dual_port_RAM.ram_dual_port^MUX_2~37 \
+ dual_port_RAM.ram_dual_port^FF~40 dual_port_RAM.ram_dual_port^MUX_2~39 
+1-1- 1 
+-1-1 1 
+
+
+.latch dual_port_RAM.ram_dual_port^MUX_2~39 dual_port_RAM.ram_dual_port^FF~40 re dual_port_RAM^clk 0 
+
+
+.names dual_port_RAM.ram_dual_port^lOR~24 dual_port_RAM.ram_dual_port^lNOT~58 
+0 1 
+
+
+.names dual_port_RAM.ram_dual_port^lOR~24 dual_port_RAM.ram_dual_port^lNOT~58 dual_port_RAM.ram_dual_port^MUX_2~57 \
+ dual_port_RAM.ram_dual_port^FF~60 dual_port_RAM.ram_dual_port^MUX_2~59 
+1-1- 1 
+-1-1 1 
+
+
+.latch dual_port_RAM.ram_dual_port^MUX_2~59 dual_port_RAM.ram_dual_port^FF~60 re dual_port_RAM^clk 0 
+
+
+.names dual_port_RAM.ram_dual_port^lOR~24 dual_port_RAM.ram_dual_port^lNOT~78 
+0 1 
+
+
+.names dual_port_RAM.ram_dual_port^lOR~24 dual_port_RAM.ram_dual_port^lNOT~78 dual_port_RAM.ram_dual_port^MUX_2~77 \
+ dual_port_RAM.ram_dual_port^FF~80 dual_port_RAM.ram_dual_port^MUX_2~79 
+1-1- 1 
+-1-1 1 
+
+
+.latch dual_port_RAM.ram_dual_port^MUX_2~79 dual_port_RAM.ram_dual_port^FF~80 re dual_port_RAM^clk 0 
+
+
+.names dual_port_RAM.ram_dual_port^lAND~23 dual_port_RAM.ram_dual_port^lAND~22 dual_port_RAM^nMUX~1^MUX_2~93 gnd \
+ dual_port_RAM.ram_dual_port^MUX_2~37 
+1-1- 1 
+-1-1 1 
+
+
+.names dual_port_RAM.ram_dual_port^lAND~23 dual_port_RAM.ram_dual_port^lAND~22 dual_port_RAM^nMUX~1^MUX_2~94 gnd \
+ dual_port_RAM.ram_dual_port^MUX_2~57 
+1-1- 1 
+-1-1 1 
+
+
+.names dual_port_RAM.ram_dual_port^lAND~23 dual_port_RAM.ram_dual_port^lAND~22 dual_port_RAM^nMUX~1^MUX_2~95 gnd \
+ dual_port_RAM.ram_dual_port^MUX_2~77 
+1-1- 1 
+-1-1 1 
+
+
+.names dual_port_RAM^lEQ~2^lAND~98 dual_port_RAM^nMUX~1^lNOT~3 dual_port_RAM^addr_wr~1 gnd dual_port_RAM^nMUX~1^MUX_2~92 
+1-1- 1 
+-1-1 1 
+
+
+.names dual_port_RAM^nMUX~1^MUX_2~92 dual_port_RAM.ram_dual_port^lNOT~14 
+0 1 
+
+
+.names dual_port_RAM^lEQ~2^lAND~98 dual_port_RAM^nMUX~1^lNOT~3 dual_port_RAM^din~0 gnd dual_port_RAM^nMUX~1^MUX_2~93 
+1-1- 1 
+-1-1 1 
+
+
+.names dual_port_RAM^lEQ~2^lAND~98 dual_port_RAM^nMUX~1^lNOT~3 dual_port_RAM^din~1 gnd dual_port_RAM^nMUX~1^MUX_2~94 
+1-1- 1 
+-1-1 1 
+
+
+.names dual_port_RAM^lEQ~2^lAND~98 dual_port_RAM^nMUX~1^lNOT~3 dual_port_RAM^din~2 gnd dual_port_RAM^nMUX~1^MUX_2~95 
+1-1- 1 
+-1-1 1 
+
+
+.names dual_port_RAM^lEQ~2^lAND~98 dual_port_RAM^nMUX~1^lNOT~3 vcc gnd dual_port_RAM^nMUX~1^MUX_2~96 
+1-1- 1 
+-1-1 1 
+
+
+.names dual_port_RAM.ram_dual_port^lAND~9 gnd dual_port_RAM.ram_dual_port^lAND~19 
+11 1 
+
+
+.names dual_port_RAM.ram_dual_port^lAND~10 gnd dual_port_RAM.ram_dual_port^lAND~22 
+11 1 
+
+
+.names dual_port_RAM.ram_dual_port^lAND~11 gnd dual_port_RAM.ram_dual_port^lAND~25 
+11 1 
+
+
+.names dual_port_RAM.ram_dual_port^lAND~12 gnd dual_port_RAM.ram_dual_port^lAND~28 
+11 1 
+
+
+.names dual_port_RAM^we vcc dual_port_RAM^lEQ~2^lXNOR~97^lXNOR~99 
+00 1 
+11 1 
+
+
+.names dual_port_RAM^lEQ~2^lXNOR~97^lXNOR~99 dual_port_RAM^lEQ~2^lAND~98 
+1 1 
+
+
+.names dual_port_RAM^lEQ~2^lAND~98 dual_port_RAM^nMUX~1^lNOT~3 
+0 1 
+
+
+.names dual_port_RAM^addr_rd~0 dual_port_RAM.ram_dual_port^lNOT~7 
+0 1 
+
+
+.names dual_port_RAM.ram_dual_port^lNOT~7 dual_port_RAM.ram_dual_port^lNOT~8 dual_port_RAM.ram_dual_port^lAND~9 
+11 1 
+
+
+.names dual_port_RAM.ram_dual_port^lNOT~7 dual_port_RAM^addr_rd~1 dual_port_RAM.ram_dual_port^lAND~11 
+11 1 
+
+
+.names dual_port_RAM^addr_rd~0 dual_port_RAM^addr_rd~1 dual_port_RAM.ram_dual_port^lAND~12 
+11 1 
+
+
+.names dual_port_RAM^addr_rd~0 dual_port_RAM.ram_dual_port^lNOT~8 dual_port_RAM.ram_dual_port^lAND~10 
+11 1 
+
+
+.names dual_port_RAM^addr_rd~1 dual_port_RAM.ram_dual_port^lNOT~8 
+0 1 
+
+
+.names dual_port_RAM.ram_dual_port^nMUX~31^MUX_2~49 dual_port_RAM^dout~0 
+1 1 
+
+
+.names dual_port_RAM.ram_dual_port^nMUX~51^MUX_2~69 dual_port_RAM^dout~1 
+1 1 
+
+
+.names dual_port_RAM.ram_dual_port^nMUX~71^MUX_2~89 dual_port_RAM^dout~2 
+1 1 
+
+
+.subckt CLOCK_GATING I=dual_port_RAM^clk
+
+.end 
+
+
+.model CLOCK_GATING
+.inputs I
+.blackbox
+.end
+

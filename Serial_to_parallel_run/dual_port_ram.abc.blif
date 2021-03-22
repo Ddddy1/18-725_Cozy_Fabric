@@ -1,0 +1,192 @@
+# Benchmark "dual_port_RAM" written by ABC on Wed Mar 10 00:33:52 2021 
+
+
+.model dual_port_RAM 
+
+
+.inputs dual_port_RAM^clk dual_port_RAM^we dual_port_RAM^addr_wr~0 dual_port_RAM^addr_wr~1 dual_port_RAM^addr_rd~0 \
+ dual_port_RAM^addr_rd~1 dual_port_RAM^din~0 dual_port_RAM^din~1 dual_port_RAM^din~2 
+
+
+.outputs dual_port_RAM^dout~0 dual_port_RAM^dout~1 dual_port_RAM^dout~2 
+
+
+
+.latch n23 dual_port_RAM.ram_dual_port^FF~36 re dual_port_RAM^clk 0 
+
+
+.latch n28 dual_port_RAM.ram_dual_port^FF~56 re dual_port_RAM^clk 0 
+
+
+.latch n33 dual_port_RAM.ram_dual_port^FF~76 re dual_port_RAM^clk 0 
+
+
+.latch n38 dual_port_RAM.ram_dual_port^FF~44 re dual_port_RAM^clk 0 
+
+
+.latch n43 dual_port_RAM.ram_dual_port^FF~64 re dual_port_RAM^clk 0 
+
+
+.latch n48 dual_port_RAM.ram_dual_port^FF~84 re dual_port_RAM^clk 0 
+
+
+.latch n53 dual_port_RAM.ram_dual_port^FF~48 re dual_port_RAM^clk 0 
+
+
+.latch n58 dual_port_RAM.ram_dual_port^FF~68 re dual_port_RAM^clk 0 
+
+
+.latch n63 dual_port_RAM.ram_dual_port^FF~88 re dual_port_RAM^clk 0 
+
+
+.latch n68 dual_port_RAM.ram_dual_port^FF~40 re dual_port_RAM^clk 0 
+
+
+.latch n73 dual_port_RAM.ram_dual_port^FF~60 re dual_port_RAM^clk 0 
+
+
+.latch n78 dual_port_RAM.ram_dual_port^FF~80 re dual_port_RAM^clk 0 
+
+
+
+
+
+
+.names dual_port_RAM^addr_rd~1 dual_port_RAM^addr_rd~0 dual_port_RAM.ram_dual_port^FF~40 n52 dual_port_RAM^dout~0 
+---0 1 
+011- 1 
+
+
+.names dual_port_RAM.ram_dual_port^FF~36 dual_port_RAM.ram_dual_port^FF~44 dual_port_RAM.ram_dual_port^FF~48 \
+ dual_port_RAM^addr_rd~0 dual_port_RAM^addr_rd~1 n52 
+--111 0 
+-1-01 0 
+1--00 0 
+
+
+.names dual_port_RAM^addr_rd~0 dual_port_RAM^addr_rd~1 dual_port_RAM.ram_dual_port^FF~68 n54_1 dual_port_RAM^dout~1 
+---0 1 
+111- 1 
+
+
+.names dual_port_RAM.ram_dual_port^FF~56 dual_port_RAM.ram_dual_port^FF~64 dual_port_RAM.ram_dual_port^FF~60 \
+ dual_port_RAM^addr_rd~0 dual_port_RAM^addr_rd~1 n54_1 
+--110 0 
+-1-01 0 
+1--00 0 
+
+
+.names dual_port_RAM^addr_rd~0 dual_port_RAM^addr_rd~1 dual_port_RAM.ram_dual_port^FF~88 n56 dual_port_RAM^dout~2 
+---0 1 
+111- 1 
+
+
+.names dual_port_RAM.ram_dual_port^FF~76 dual_port_RAM.ram_dual_port^FF~84 dual_port_RAM.ram_dual_port^FF~80 \
+ dual_port_RAM^addr_rd~0 dual_port_RAM^addr_rd~1 n56 
+--110 0 
+-1-01 0 
+1--00 0 
+
+
+.names dual_port_RAM^din~0 dual_port_RAM^addr_wr~0 dual_port_RAM^addr_wr~1 dual_port_RAM^we dual_port_RAM.ram_dual_port^FF~36 \
+ n23 
+---01 1 
+--1-1 1 
+-1--1 1 
+1001- 1 
+
+
+.names dual_port_RAM^din~1 dual_port_RAM^addr_wr~0 dual_port_RAM^addr_wr~1 dual_port_RAM^we dual_port_RAM.ram_dual_port^FF~56 \
+ n28 
+---01 1 
+--1-1 1 
+-1--1 1 
+1001- 1 
+
+
+.names dual_port_RAM^din~2 dual_port_RAM^addr_wr~0 dual_port_RAM^addr_wr~1 dual_port_RAM^we dual_port_RAM.ram_dual_port^FF~76 \
+ n33 
+---01 1 
+--1-1 1 
+-1--1 1 
+1001- 1 
+
+
+.names dual_port_RAM^din~0 dual_port_RAM^addr_wr~0 dual_port_RAM^we dual_port_RAM^addr_wr~1 dual_port_RAM.ram_dual_port^FF~44 \
+ n38 
+---01 1 
+--0-1 1 
+-1--1 1 
+1011- 1 
+
+
+.names dual_port_RAM^din~1 dual_port_RAM^addr_wr~0 dual_port_RAM^we dual_port_RAM^addr_wr~1 dual_port_RAM.ram_dual_port^FF~64 \
+ n43 
+---01 1 
+--0-1 1 
+-1--1 1 
+1011- 1 
+
+
+.names dual_port_RAM^din~2 dual_port_RAM^addr_wr~0 dual_port_RAM^we dual_port_RAM^addr_wr~1 dual_port_RAM.ram_dual_port^FF~84 \
+ n48 
+---01 1 
+--0-1 1 
+-1--1 1 
+1011- 1 
+
+
+.names dual_port_RAM^din~0 dual_port_RAM^we dual_port_RAM^addr_wr~0 dual_port_RAM^addr_wr~1 dual_port_RAM.ram_dual_port^FF~48 \
+ n53 
+---01 1 
+--0-1 1 
+-0--1 1 
+1111- 1 
+
+
+.names dual_port_RAM^din~1 dual_port_RAM^we dual_port_RAM^addr_wr~0 dual_port_RAM^addr_wr~1 dual_port_RAM.ram_dual_port^FF~68 \
+ n58 
+---01 1 
+--0-1 1 
+-0--1 1 
+1111- 1 
+
+
+.names dual_port_RAM^din~2 dual_port_RAM^we dual_port_RAM^addr_wr~0 dual_port_RAM^addr_wr~1 dual_port_RAM.ram_dual_port^FF~88 \
+ n63 
+---01 1 
+--0-1 1 
+-0--1 1 
+1111- 1 
+
+
+.names dual_port_RAM^din~0 dual_port_RAM^addr_wr~1 dual_port_RAM^we dual_port_RAM^addr_wr~0 dual_port_RAM.ram_dual_port^FF~40 \
+ n68 
+---01 1 
+--0-1 1 
+-1--1 1 
+1011- 1 
+
+
+.names dual_port_RAM^din~1 dual_port_RAM^addr_wr~1 dual_port_RAM^we dual_port_RAM^addr_wr~0 dual_port_RAM.ram_dual_port^FF~60 \
+ n73 
+---01 1 
+--0-1 1 
+-1--1 1 
+1011- 1 
+
+
+.names dual_port_RAM^din~2 dual_port_RAM^addr_wr~1 dual_port_RAM^we dual_port_RAM^addr_wr~0 dual_port_RAM.ram_dual_port^FF~80 \
+ n78 
+---01 1 
+--0-1 1 
+-1--1 1 
+1011- 1 
+
+
+
+.end 
+
+
+
+

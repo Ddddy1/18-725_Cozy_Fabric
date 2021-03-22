@@ -1,0 +1,388 @@
+VPR FPGA Placement and Routing.
+Version: 8.1.0-dev+7be7cbe3d
+Revision: v8.0.0-3332-g7be7cbe3d
+Compiled: 2021-02-26T03:04:33
+Compiler: GNU 9.3.0 on Linux-5.8.0-44-generic x86_64
+Build Info: release IPO VTR_ASSERT_LEVEL=2
+
+University of Toronto
+verilogtorouting.org
+vtr-users@googlegroups.com
+This is free open source code under MIT license.
+
+VPR was run with the following command-line:
+/home/jiayin/App/vtr/vpr/vpr ../arch/CozyFabric.xml dual_port_ram --circuit_file dual_port_ram.pre-vpr.blif --route_chan_width 8 --analysis --disp on
+
+
+Architecture file: ../arch/CozyFabric.xml
+Circuit name: dual_port_ram
+
+# Loading Architecture Description
+# Loading Architecture Description took 0.00 seconds (max_rss 14.4 MiB, delta_rss +0.0 MiB)
+# Building complex block graph
+# Building complex block graph took 0.00 seconds (max_rss 14.4 MiB, delta_rss +0.0 MiB)
+# Load circuit
+# Load circuit took 0.00 seconds (max_rss 14.4 MiB, delta_rss +0.0 MiB)
+# Clean circuit
+Absorbed 0 LUT buffers
+Inferred    0 additional primitive pins as constant generators since they have no combinationally connected inputs
+Inferred    0 additional primitive pins as constant generators due to constant inputs
+Swept input(s)      : 0
+Swept output(s)     : 0 (0 dangling, 0 constant)
+Swept net(s)        : 0
+Swept block(s)      : 0
+Constant Pins Marked: 0
+# Clean circuit took 0.00 seconds (max_rss 14.4 MiB, delta_rss +0.0 MiB)
+# Compress circuit
+# Compress circuit took 0.00 seconds (max_rss 14.4 MiB, delta_rss +0.0 MiB)
+# Verify circuit
+# Verify circuit took 0.00 seconds (max_rss 14.4 MiB, delta_rss +0.0 MiB)
+Circuit Statistics:
+  Blocks: 36
+    .input :       8
+    .latch :       8
+    .output:       2
+    4-LUT  :      18
+  Nets  : 34
+    Avg Fanout:     2.2
+    Max Fanout:     8.0
+    Min Fanout:     1.0
+  Netlist Clocks: 1
+# Build Timing Graph
+  Timing Graph Nodes: 108
+  Timing Graph Edges: 146
+  Timing Graph Levels: 8
+# Build Timing Graph took 0.00 seconds (max_rss 14.4 MiB, delta_rss +0.0 MiB)
+Netlist contains 1 clocks
+  Netlist Clock 'dual_port_RAM^clk' Fanout: 8 pins (7.4%), 8 blocks (22.2%)
+# Load Timing Constraints
+
+SDC file 'dual_port_ram.sdc' not found
+Setting default timing constraints:
+   * constrain all primay inputs and primary outputs on netlist clock 'dual_port_RAM^clk'
+   * optimize netlist clock to run as fast as possible
+Timing constraints created 1 clocks
+  Constrained Clock 'dual_port_RAM^clk' Source: 'dual_port_RAM^clk.inpad[0]'
+
+# Load Timing Constraints took 0.00 seconds (max_rss 14.4 MiB, delta_rss +0.0 MiB)
+Timing analysis: ON
+Circuit netlist file: dual_port_ram.net
+Circuit placement file: dual_port_ram.place
+Circuit routing file: dual_port_ram.route
+Circuit SDC file: dual_port_ram.sdc
+Vpr floorplanning constraints file: 
+
+Packer: ENABLED
+Placer: ENABLED
+Router: ENABLED
+Analysis: ENABLED
+
+NetlistOpts.abosrb_buffer_luts            : true
+NetlistOpts.sweep_dangling_primary_ios    : true
+NetlistOpts.sweep_dangling_nets           : true
+NetlistOpts.sweep_dangling_blocks         : true
+NetlistOpts.sweep_constant_primary_outputs: false
+NetlistOpts.netlist_verbosity             : 1
+NetlistOpts.const_gen_inference           : COMB_SEQ
+
+PackerOpts.allow_unrelated_clustering: auto
+PackerOpts.alpha_clustering: 0.750000
+PackerOpts.beta_clustering: 0.900000
+PackerOpts.cluster_seed_type: BLEND2
+PackerOpts.connection_driven: true
+PackerOpts.global_clocks: true
+PackerOpts.hill_climbing_flag: false
+PackerOpts.inter_cluster_net_delay: 1.000000
+PackerOpts.timing_driven: true
+PackerOpts.target_external_pin_util: auto
+
+PlacerOpts.place_freq: PLACE_ONCE
+PlacerOpts.place_algorithm: CRITICALITY_TIMING_PLACE
+PlacerOpts.pad_loc_type: FREE
+PlacerOpts.constraints_file: No constraints file given
+PlacerOpts.place_cost_exp: 1.000000
+PlacerOpts.place_chan_width: 8
+PlacerOpts.inner_loop_recompute_divider: 0
+PlacerOpts.recompute_crit_iter: 1
+PlacerOpts.timing_tradeoff: 0.500000
+PlacerOpts.td_place_exp_first: 1.000000
+PlacerOpts.td_place_exp_last: 8.000000
+PlacerOpts.delay_offset: 0.000000
+PlacerOpts.delay_ramp_delta_threshold: -1
+PlacerOpts.delay_ramp_slope: 0.000000
+PlacerOpts.tsu_rel_margin: 1.000000
+PlacerOpts.tsu_abs_margin: 0.000000
+PlacerOpts.post_place_timing_report_file: 
+PlacerOpts.allowed_tiles_for_delay_model: 
+PlacerOpts.delay_model_reducer: MIN
+PlacerOpts.delay_model_type: DELTA
+PlacerOpts.rlim_escape_fraction: 0.000000
+PlacerOpts.move_stats_file: 
+PlacerOpts.placement_saves_per_temperature: 0
+PlacerOpts.effort_scaling: CIRCUIT
+PlacerOpts.place_delta_delay_matrix_calculation_method: ASTAR_ROUTE
+PlaceOpts.seed: 1
+AnnealSched.type: AUTO_SCHED
+AnnealSched.inner_num: 0.500000
+
+RouterOpts.route_type: DETAILED
+RouterOpts.router_algorithm: TIMING_DRIVEN
+RouterOpts.base_cost_type: DELAY_NORMALIZED_LENGTH
+RouterOpts.fixed_channel_width: 8
+RouterOpts.check_route: FULL
+RouterOpts.acc_fac: 1.000000
+RouterOpts.bb_factor: 3
+RouterOpts.bend_cost: 0.000000
+RouterOpts.first_iter_pres_fac: 0.000000
+RouterOpts.initial_pres_fac: 0.500000
+RouterOpts.pres_fac_mult: 1.300000
+RouterOpts.max_router_iterations: 50
+RouterOpts.min_incremental_reroute_fanout: 16
+RouterOpts.do_check_rr_graph: true
+RouterOpts.verify_binary_search: false
+RouterOpts.min_channel_width_hint: 0
+RouterOpts.read_rr_edge_metadata: false
+RouterOpts.exit_after_first_routing_iteration: false
+RouterOpts.astar_fac: 1.200000
+RouterOpts.router_profiler_astar_fac: 1.200000
+RouterOpts.criticality_exp: 1.000000
+RouterOpts.max_criticality: 0.990000
+RouterOpts.init_wirelength_abort_threshold: 0.850000
+RouterOpts.save_routing_per_iteration: false
+RouterOpts.congested_routing_iteration_threshold_frac: 1.000000
+RouterOpts.high_fanout_threshold: 64
+RouterOpts.router_debug_net: -2
+RouterOpts.router_debug_sink_rr: -2
+RouterOpts.router_debug_iteration: -2
+RouterOpts.max_convergence_count: 1
+RouterOpts.reconvergence_cpd_threshold: 0.990000
+RouterOpts.update_lower_bound_delays: true
+RouterOpts.first_iteration_timing_report_file: 
+RouterOpts.incr_reroute_delay_ripup: AUTO
+RouterOpts.route_bb_update: DYNAMIC
+RouterOpts.lookahead_type: MAP
+RouterOpts.initial_timing: LOOKAHEAD
+RouterOpts.router_heap: BINARY_HEAP
+RouterOpts.routing_failure_predictor = SAFE
+RouterOpts.routing_budgets_algorithm = DISABLE
+
+AnalysisOpts.gen_post_synthesis_netlist: false
+AnalysisOpts.timing_report_npaths: 100
+AnalysisOpts.timing_report_skew: false
+AnalysisOpts.echo_dot_timing_graph_node: -1
+AnalysisOpts.timing_report_detail: NETLIST
+
+RoutingArch.directionality: UNI_DIRECTIONAL
+RoutingArch.switch_block_type: WILTON
+RoutingArch.Fs: 3
+
+# Load packing
+Begin loading packed FPGA netlist file.
+Netlist generated from file 'dual_port_ram.net'.
+Detected 0 constant generators (to see names run with higher pack verbosity)
+Finished loading packed FPGA netlist file (took 0.008986 seconds).
+Warning 1: Treated 0 constant nets as global which will not be routed (to see net names increase packer verbosity).
+# Load packing took 0.02 seconds (max_rss 16.3 MiB, delta_rss +1.9 MiB)
+Warning 2: Netlist contains 0 global net to non-global architecture pin connections
+
+Netlist num_nets: 26
+Netlist num_blocks: 28
+Netlist EMPTY blocks: 0.
+Netlist io blocks: 10.
+Netlist clb blocks: 18.
+Netlist inputs pins: 8
+Netlist output pins: 2
+
+
+Pb types usage...
+  io        : 10
+   inpad    : 8
+   outpad   : 2
+  clb       : 18
+   flut5    : 18
+    lut5    : 18
+     lut    : 18
+    ff      : 8
+
+# Create Device
+## Build Device Grid
+FPGA sized to 10 x 10: 100 grid tiles (Fixed_Layout_Tong)
+
+Resource usage...
+	Netlist
+		10	blocks of type: io
+	Architecture
+		10	blocks of type: io
+	Netlist
+		18	blocks of type: clb
+	Architecture
+		64	blocks of type: clb
+
+Device Utilization: 0.28 (target 1.00)
+	Physical Tile io:
+	Block Utilization: 1.00 Logical Block: io
+	Physical Tile clb:
+	Block Utilization: 0.28 Logical Block: clb
+
+## Build Device Grid took 0.00 seconds (max_rss 16.6 MiB, delta_rss +0.0 MiB)
+## Build routing resource graph
+## Build routing resource graph took 0.00 seconds (max_rss 16.9 MiB, delta_rss +0.4 MiB)
+  RR Graph Nodes: 1768
+  RR Graph Edges: 4672
+# Create Device took 0.00 seconds (max_rss 16.9 MiB, delta_rss +0.4 MiB)
+
+# Load Placement
+Reading dual_port_ram.place.
+
+Successfully read dual_port_ram.place.
+
+# Load Placement took 0.00 seconds (max_rss 16.9 MiB, delta_rss +0.0 MiB)
+
+# Load Routing
+Begin loading FPGA routing file.
+Finished loading route file
+# Load Routing took 0.00 seconds (max_rss 16.9 MiB, delta_rss +0.0 MiB)
+
+Checking to ensure routing is legal...
+# Checking to ensure non-configurable edges are legal
+# Checking to ensure non-configurable edges are legal took 0.00 seconds (max_rss 16.9 MiB, delta_rss +0.0 MiB)
+Completed routing consistency check successfully.
+
+Serial number (magic cookie) for the routing is: -1346464
+Circuit successfully routed with a channel width factor of 8.
+RR node: 1185 type: CHANX location: (8,8) track: 1 len: 0 longline: 0 seg_type: unnamed_segment_0 dir: DEC_DIR capacity: 1 fan-in: 2 fan-out: 3
+RR node: 1185 type: CHANX location: (8,8) track: 1 len: 0 longline: 0 seg_type: unnamed_segment_0 dir: DEC_DIR capacity: 1 fan-in: 2 fan-out: 3
+RR node: 1765 type: CHANY location: (8,8) track: 5 len: 0 longline: 0 seg_type: unnamed_segment_0 dir: DEC_DIR capacity: 1 fan-in: 1 fan-out: 3
+RR node: 1764 type: CHANY location: (8,8) track: 4 len: 0 longline: 0 seg_type: unnamed_segment_0 dir: INC_DIR capacity: 1 fan-in: 2 fan-out: 2
+RR node: 1763 type: CHANY location: (8,8) track: 3 len: 0 longline: 0 seg_type: unnamed_segment_0 dir: DEC_DIR capacity: 1 fan-in: 1 fan-out: 3
+RR node: 1761 type: CHANY location: (8,8) track: 1 len: 0 longline: 0 seg_type: unnamed_segment_0 dir: DEC_DIR capacity: 1 fan-in: 2 fan-out: 3
+RR node: 1761 type: CHANY location: (8,8) track: 1 len: 0 longline: 0 seg_type: unnamed_segment_0 dir: DEC_DIR capacity: 1 fan-in: 2 fan-out: 3
+RR node: 1184 type: CHANX location: (8,8) track: 0 len: 0 longline: 0 seg_type: unnamed_segment_0 dir: INC_DIR capacity: 1 fan-in: 3 fan-out: 2
+RR node: 1760 type: CHANY location: (8,8) track: 0 len: 0 longline: 0 seg_type: unnamed_segment_0 dir: INC_DIR capacity: 1 fan-in: 3 fan-out: 2
+RR node: 1761 type: CHANY location: (8,8) track: 1 len: 0 longline: 0 seg_type: unnamed_segment_0 dir: DEC_DIR capacity: 1 fan-in: 2 fan-out: 3
+# Synchronize the packed netlist to routing optimization
+## Annotating rr_node with routed nets
+## Annotating rr_node with routed nets took 0.00 seconds (max_rss 55.5 MiB, delta_rss +0.0 MiB)
+Found 45 mismatches between routing and packing results.
+Fixed 34 routing traces due to mismatch between routing and packing results.
+# Synchronize the packed netlist to routing optimization took 0.00 seconds (max_rss 55.5 MiB, delta_rss +0.0 MiB)
+	EMPTY: # blocks: 0, average # input + clock pins used: 0, average # output pins used: 0
+	io: # blocks: 10, average # input + clock pins used: 0.2, average # output pins used: 0.8
+	clb: # blocks: 18, average # input + clock pins used: 3.11111, average # output pins used: 1
+Absorbed logical nets 8 out of 34 nets, 26 nets not absorbed.
+
+
+Average number of bends per net: 3.44000  Maximum # of bends: 8
+
+Number of global nets: 1
+Number of routed nets (nonglobal): 25
+Wire length results (in units of 1 clb segments)...
+	Total wirelength: 163, average net length: 6.52000
+	Maximum net length: 16
+
+Wire length results in terms of physical segments...
+	Total wiring segments used: 163, average wire segments per net: 6.52000
+	Maximum segments used by a net: 16
+	Total local nets with reserved CLB opins: 0
+
+Routing channel utilization histogram:
+[        1:      inf)  0 (  0.0%) |
+[      0.9:        1)  0 (  0.0%) |
+[      0.8:      0.9)  0 (  0.0%) |
+[      0.7:      0.8)  8 (  4.9%) |*****
+[      0.5:      0.6)  0 (  0.0%) |
+[      0.4:      0.5)  8 (  4.9%) |*****
+[      0.3:      0.4)  6 (  3.7%) |****
+[      0.2:      0.3) 18 ( 11.1%) |***********
+[      0.1:      0.2) 44 ( 27.2%) |***************************
+[        0:      0.1) 78 ( 48.1%) |************************************************
+Maximum routing channel utilization:      0.75 at (4,4)
+
+X - Directed channels:   j max occ ave occ capacity
+                      ---- ------- ------- --------
+                         0       1   0.200        8
+                         1       2   0.900        8
+                         2       5   1.600        8
+                         3       4   1.200        8
+                         4       6   2.000        8
+                         5       2   0.500        8
+                         6       4   0.600        8
+                         7       4   1.100        8
+                         8       2   0.500        8
+Y - Directed channels:   i max occ ave occ capacity
+                      ---- ------- ------- --------
+                         0       1   0.300        8
+                         1       0   0.000        8
+                         2       1   0.100        8
+                         3       3   1.300        8
+                         4       6   2.400        8
+                         5       5   2.200        8
+                         6       4   1.000        8
+                         7       1   0.100        8
+                         8       1   0.300        8
+
+Total tracks in x-direction: 72, in y-direction: 72
+
+Logic area (in minimum width transistor areas, excludes I/Os and empty grid tiles)...
+	Total logic block area (Warning, need to add pitch of routing to blocks with height > 3): 3.44922e+06
+	Total used logic block area: 970092
+
+Routing area (in minimum width transistor areas)...
+	Total routing area: 58977.0, per logic tile: 589.770
+
+Segment usage by type (index):              name type utilization
+                               ----------------- ---- -----------
+                               unnamed_segment_0    0       0.141
+
+Segment usage by length: length utilization
+                         ------ -----------
+                              1       0.141
+
+
+Final hold Worst Negative Slack (hWNS): 0 ns
+Final hold Total Negative Slack (hTNS): 0 ns
+
+Final hold slack histogram:
+[  2.9e-10:  4.4e-10) 8 ( 80.0%) |*************************************************
+[  4.4e-10:  5.8e-10) 0 (  0.0%) |
+[  5.8e-10:  7.2e-10) 0 (  0.0%) |
+[  7.2e-10:  8.6e-10) 0 (  0.0%) |
+[  8.6e-10:    1e-09) 0 (  0.0%) |
+[    1e-09:  1.1e-09) 0 (  0.0%) |
+[  1.1e-09:  1.3e-09) 0 (  0.0%) |
+[  1.3e-09:  1.4e-09) 0 (  0.0%) |
+[  1.4e-09:  1.6e-09) 0 (  0.0%) |
+[  1.6e-09:  1.7e-09) 2 ( 20.0%) |************
+
+Final critical path delay (least slack): 2.16737 ns, Fmax: 461.388 MHz
+Final setup Worst Negative Slack (sWNS): -2.16737 ns
+Final setup Total Negative Slack (sTNS): -17.1319 ns
+
+Final setup slack histogram:
+[ -2.2e-09: -2.1e-09) 1 ( 10.0%) |**********
+[ -2.1e-09:   -2e-09) 1 ( 10.0%) |**********
+[   -2e-09:   -2e-09) 0 (  0.0%) |
+[   -2e-09: -1.9e-09) 0 (  0.0%) |
+[ -1.9e-09: -1.9e-09) 0 (  0.0%) |
+[ -1.9e-09: -1.8e-09) 0 (  0.0%) |
+[ -1.8e-09: -1.7e-09) 1 ( 10.0%) |**********
+[ -1.7e-09: -1.7e-09) 0 (  0.0%) |
+[ -1.7e-09: -1.6e-09) 5 ( 50.0%) |*************************************************
+[ -1.6e-09: -1.5e-09) 2 ( 20.0%) |********************
+
+Final geomean non-virtual intra-domain period: 2.16737 ns (461.388 MHz)
+Final fanout-weighted geomean non-virtual intra-domain period: 2.16737 ns (461.388 MHz)
+
+Incr Slack updates 1 in 3.256e-06 sec
+Full Max Req/Worst Slack updates 1 in 1.533e-06 sec
+Incr Max Req/Worst Slack updates 0 in 0 sec
+Incr Criticality updates 0 in 0 sec
+Full Criticality updates 1 in 3.016e-06 sec
+Flow timing analysis took 0.00132783 seconds (0.0002536 STA, 0.00107423 slack) (2 full updates: 0 setup, 0 hold, 2 combined).
+VPR succeeded
+The entire flow of VPR took 426.43 seconds (max_rss 55.5 MiB)
+Incr Slack updates 1 in 2.616e-06 sec
+Full Max Req/Worst Slack updates 1 in 1.563e-06 sec
+Incr Max Req/Worst Slack updates 0 in 0 sec
+Incr Criticality updates 0 in 0 sec
+Full Criticality updates 1 in 0.00105108 sec

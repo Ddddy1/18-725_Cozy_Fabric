@@ -1,0 +1,35 @@
+Netlist_File: dual_port_ram.net Netlist_ID: SHA256:26552c4cbd0f7706948403b19d3d0fb046fcb793ff70d945c0efff63b6c76c58
+Array size: 10 x 10 logic blocks
+
+#block name	x	y	subblk	block number
+#----------	--	--	------	------------
+n23		3	3	0	#0
+n28		4	5	0	#1
+n33		3	2	0	#2
+n38		2	4	0	#3
+n43		5	4	0	#4
+n48		4	2	0	#5
+n53		3	4	0	#6
+n58		5	5	0	#7
+n63		4	3	0	#8
+n68		2	5	0	#9
+n73		4	4	0	#10
+n78		3	1	0	#11
+n52		2	3	0	#12
+n54_1		5	3	0	#13
+n56		4	1	0	#14
+dual_port_RAM^dout~0	2	2	0	#15
+dual_port_RAM^dout~1	5	2	0	#16
+dual_port_RAM^dout~2	5	1	0	#17
+out:dual_port_RAM^dout~0	1	0	0	#18
+out:dual_port_RAM^dout~1	6	0	0	#19
+out:dual_port_RAM^dout~2	5	0	0	#20
+dual_port_RAM^clk	0	8	0	#21
+dual_port_RAM^we	2	0	0	#22
+dual_port_RAM^addr_wr~0	3	9	0	#23
+dual_port_RAM^addr_wr~1	0	4	0	#24
+dual_port_RAM^addr_rd~0	4	0	0	#25
+dual_port_RAM^addr_rd~1	3	0	0	#26
+dual_port_RAM^din~0	2	9	0	#27
+dual_port_RAM^din~1	4	9	0	#28
+dual_port_RAM^din~2	7	0	0	#29

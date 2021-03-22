@@ -1,0 +1,121 @@
+/usr/bin/env time -v /home/jiayin/App/vtr/abc/abc -c echo ""; echo "Load Netlist"; echo "============"; read 0_dual_port_ram.odin.blif; time; echo ""; echo "Circuit Info"; echo "=========="; print_stats; print_latch; time; echo ""; echo "LUT Costs"; echo "========="; print_lut; time; echo ""; echo "Logic Opt + Techmap"; echo "==================="; strash; ifraig -v; scorr -v; dc2 -v; dch -f; if -K 5 -v; mfs2 -v; print_stats; time; echo ""; echo "Output Netlist"; echo "=============="; write_hie 0_dual_port_ram.odin.blif 0_dual_port_ram.raw.abc.blif; time;
+ABC command line: "echo ""; echo "Load Netlist"; echo "============"; read 0_dual_port_ram.odin.blif; time; echo ""; echo "Circuit Info"; echo "=========="; print_stats; print_latch; time; echo ""; echo "LUT Costs"; echo "========="; print_lut; time; echo ""; echo "Logic Opt + Techmap"; echo "==================="; strash; ifraig -v; scorr -v; dc2 -v; dch -f; if -K 5 -v; mfs2 -v; print_stats; time; echo ""; echo "Output Netlist"; echo "=============="; write_hie 0_dual_port_ram.odin.blif 0_dual_port_ram.raw.abc.blif; time;".
+
+ 
+Load Netlist 
+============ 
+Hierarchy reader converted 1 instances of blackboxes.
+elapse: 0.00 seconds, total: 0.00 seconds
+ 
+Circuit Info 
+========== 
+[1;37mdual_port_RAM                 :[0m i/o =    9/    4  lat =   12  nd =    78  edge =    207  cube =   119  lev = 10
+Total latches =    12. Init0 = 12. Init1 = 0. InitDC = 0. Const data = 0.
+elapse: 0.00 seconds, total: 0.00 seconds
+ 
+LUT Costs 
+========= 
+# The area/delay of k-variable LUTs:
+# k    area     delay
+1      1.00      1.00
+2      1.00      1.00
+3      1.00      1.00
+4      1.00      1.00
+elapse: 0.00 seconds, total: 0.00 seconds
+ 
+Logic Opt + Techmap 
+=================== 
+SimWords = 32. Rounds = 4. Mem = 0.02 MB.  Classes: Beg = 15. End = 15.
+Proof = 15. Counter-example = 0. Fail = 0. FailReal = 0. Zero = 0.
+Final = 71. Miter = 86. Total = 86. Mux = 0. (Exor = 0.) SatVars = 43.
+starts        :                0
+conflicts     :                0
+decisions     :                0
+propagations  :              375
+AIG simulation   =     0.00 sec
+AIG traversal    =     0.00 sec
+SAT solving      =     0.00 sec
+    Unsat        =     0.00 sec
+    Sat          =     0.00 sec
+    Fail         =     0.00 sec
+Class refining   =     0.00 sec
+TOTAL RUNTIME    =     0.00 sec
+Allocated 0.00 MB to store simulation information.
+Initial simulation of 4 frames with 2 words.     Time =     0.00 sec
+Collecting candidate equivalence classes.        Time =     0.00 sec
+Simulation of 4 frames with 2 words ( 0 rounds). Time =     0.00 sec
+Before BMC: Equiv classes: Const1 =     0. Class =     0. Lit =     0.
+After  BMC: Equiv classes: Const1 =     0. Class =     0. Lit =     0.
+  0 : C =      0. Cl =      0. LR =     0. NR =   117. F =    0. - T =     0.00 sec
+Parameters: F = 1. AddF = 2. C-lim = 1000. Constr = 0. MaxLev = 0. Mem = 0.00 MB.
+AIG       : PI = 9. PO = 4. Latch = 12. Node = 71.  Ave SAT vars = 0.
+SAT calls : Proof = 0. Cex = 0. Fail = 0. Lits proved = 0.
+SAT solver: Vars max = 41. Calls max = 0. Recycles = 0. Sim rounds = 0.
+NBeg = 71. NEnd = 71. (Gain =   0.00 %).  RBeg = 12. REnd = 12. (Gain =   0.00 %).
+BMC         =     0.00 sec (  1.15 %)
+Spec reduce =     0.00 sec (  4.62 %)
+Mark cones  =     0.00 sec (  0.00 %)
+Sim SAT     =     0.00 sec (  0.00 %)
+SAT solving =     0.00 sec (  0.00 %)
+  unsat     =     0.00 sec (  0.00 %)
+  sat       =     0.00 sec (  0.00 %)
+  undecided =     0.00 sec (  0.00 %)
+Other       =     0.00 sec ( 94.23 %)
+TOTAL       =     0.00 sec (100.00 %)
+Starting:  dual_port_RAM   : pi =     9  po =     4  lat =    12  and =      71  lev =   5
+Rewrite:   dual_port_RAM   : pi =     9  po =     4  lat =    12  and =      71  lev =   5
+Refactor:  dual_port_RAM   : pi =     9  po =     4  lat =    12  and =      71  lev =   5
+Balance:   dual_port_RAM   : pi =     9  po =     4  lat =    12  and =      71  lev =   5
+Rewrite:   dual_port_RAM   : pi =     9  po =     4  lat =    12  and =      71  lev =   5
+RewriteZ:  dual_port_RAM   : pi =     9  po =     4  lat =    12  and =      68  lev =   5
+RefactorZ: dual_port_RAM   : pi =     9  po =     4  lat =    12  and =      68  lev =   4
+RewriteZ:  dual_port_RAM   : pi =     9  po =     4  lat =    12  and =      68  lev =   5
+K = 5. Memory (bytes): Truth =    0. Cut =   52. Obj =  132. Set =  564. CutMin = no
+Node =     113.  Ch =    16.  Total mem =    0.02 MB. Peak cut mem =    0.01 MB.
+P:  Del =    2.00.  Ar =      21.0.  Edge =       90.  Cut =      743.  T =     0.00 sec
+P:  Del =    2.00.  Ar =      18.0.  Edge =       87.  Cut =      718.  T =     0.00 sec
+P:  Del =    2.00.  Ar =      18.0.  Edge =       87.  Cut =      718.  T =     0.00 sec
+F:  Del =    2.00.  Ar =      18.0.  Edge =       87.  Cut =      691.  T =     0.00 sec
+A:  Del =    2.00.  Ar =      18.0.  Edge =       87.  Cut =      707.  T =     0.00 sec
+A:  Del =    2.00.  Ar =      18.0.  Edge =       87.  Cut =      707.  T =     0.00 sec
+Total time =     0.00 sec
+Performing MFS with 21 PIs, 16 POs, 18 nodes (18 flexible, 0 fixed, 0 empty).
+Nodes = 18. Try = 18. Resub = 0. Div = 9 (ave = 0). SAT calls = 298. Timeouts = 0. MaxDivs = 0.
+Attempts :   Remove      0 out of     87 (  0.00 %)   Resub       0 out of      3 (  0.00 %)   
+Reduction:   Nodes       0 out of     18 (  0.00 %)   Edges       0 out of     87 (  0.00 %)   
+Win =     0.00 sec (  0.93 %)
+Div =     0.00 sec (  1.34 %)
+Cnf =     0.00 sec (  3.07 %)
+Sat =     0.00 sec ( 38.45 %)
+Oth =     0.00 sec ( 56.21 %)
+ALL =     0.00 sec (100.00 %)
+[1;37mdual_port_RAM                 :[0m i/o =    9/    4  lat =   12  nd =    18  edge =     87  cube =    63  lev = 2
+elapse: 0.02 seconds, total: 0.02 seconds
+ 
+Output Netlist 
+============== 
+Hierarchy writer reintroduced 1 instances of blackboxes.
+elapse: 0.00 seconds, total: 0.02 seconds
+	Command being timed: "/home/jiayin/App/vtr/abc/abc -c echo ""; echo "Load Netlist"; echo "============"; read 0_dual_port_ram.odin.blif; time; echo ""; echo "Circuit Info"; echo "=========="; print_stats; print_latch; time; echo ""; echo "LUT Costs"; echo "========="; print_lut; time; echo ""; echo "Logic Opt + Techmap"; echo "==================="; strash; ifraig -v; scorr -v; dc2 -v; dch -f; if -K 5 -v; mfs2 -v; print_stats; time; echo ""; echo "Output Netlist"; echo "=============="; write_hie 0_dual_port_ram.odin.blif 0_dual_port_ram.raw.abc.blif; time;"
+	User time (seconds): 0.03
+	System time (seconds): 0.01
+	Percent of CPU this job got: 93%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.04
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 36004
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 7824
+	Voluntary context switches: 1
+	Involuntary context switches: 24
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 8
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0

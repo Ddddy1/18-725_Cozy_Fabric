@@ -1,0 +1,60 @@
+digraph G {
+	ranksep=.25;
+	"dual_port_RAM_clk" [shape=triangle];
+	"dual_port_RAM_clk" -> "dual_port_RAM_ram_dual_port";
+	"dual_port_RAM_ram_dual_port"
+	"dual_port_RAM_ram_dual_port" -> "dual_port_RAM_BUF~4"[label="dual_port_RAM^dout~0"];
+	"dual_port_RAM_BUF~4" [shape=box];
+	"dual_port_RAM_BUF~4" -> "dual_port_RAM_dout~0_O";
+	"dual_port_RAM_dout~0_O" [shape=triangle];
+	"dual_port_RAM_ram_dual_port" -> "dual_port_RAM_BUF~5"[label="dual_port_RAM^dout~1"];
+	"dual_port_RAM_BUF~5" [shape=box];
+	"dual_port_RAM_BUF~5" -> "dual_port_RAM_dout~1_O";
+	"dual_port_RAM_dout~1_O" [shape=triangle];
+	"dual_port_RAM_ram_dual_port" -> "dual_port_RAM_BUF~6"[label="dual_port_RAM^dout~2"];
+	"dual_port_RAM_BUF~6" [shape=box];
+	"dual_port_RAM_BUF~6" -> "dual_port_RAM_dout~2_O";
+	"dual_port_RAM_dout~2_O" [shape=triangle];
+	"dual_port_RAM_we" [shape=triangle];
+	"dual_port_RAM_we" -> "dual_port_RAM_lEQ~2"[label="dual_port_RAM^we"];
+	"dual_port_RAM_lEQ~2"
+	"dual_port_RAM_lEQ~2" -> "dual_port_RAM_nMUX~1";
+	"dual_port_RAM_nMUX~1"
+	"dual_port_RAM_nMUX~1" -> "dual_port_RAM_ram_dual_port"[label="dual_port_RAM^ram_dual_port~10"];
+	"dual_port_RAM_nMUX~1" -> "dual_port_RAM_ram_dual_port"[label="dual_port_RAM^ram_dual_port~11"];
+	"dual_port_RAM_nMUX~1" -> "dual_port_RAM_ram_dual_port"[label="dual_port_RAM^ram_dual_port~12"];
+	"dual_port_RAM_nMUX~1" -> "dual_port_RAM_ram_dual_port"[label="dual_port_RAM^ram_dual_port~13"];
+	"dual_port_RAM_nMUX~1" -> "dual_port_RAM_ram_dual_port"[label="dual_port_RAM^ram_dual_port~14"];
+	"dual_port_RAM_nMUX~1" -> "dual_port_RAM_ram_dual_port"[label="dual_port_RAM^ram_dual_port~15"];
+	"dual_port_RAM_lEQ~2" -> "dual_port_RAM_nMUX~1_lNOT~3";
+	"dual_port_RAM_nMUX~1_lNOT~3"
+	"dual_port_RAM_nMUX~1_lNOT~3" -> "dual_port_RAM_nMUX~1";
+	"dual_port_RAM_addr_wr~0" [shape=triangle];
+	"dual_port_RAM_addr_wr~0" -> "dual_port_RAM_nMUX~1"[label="dual_port_RAM^ram_dual_port~10"];
+	"dual_port_RAM_addr_wr~1" [shape=triangle];
+	"dual_port_RAM_addr_wr~1" -> "dual_port_RAM_nMUX~1"[label="dual_port_RAM^ram_dual_port~11"];
+	"dual_port_RAM_addr_rd~0" [shape=triangle];
+	"dual_port_RAM_addr_rd~0" -> "dual_port_RAM_ram_dual_port"[label="dual_port_RAM^ram_dual_port~0"];
+	"dual_port_RAM_addr_rd~1" [shape=triangle];
+	"dual_port_RAM_addr_rd~1" -> "dual_port_RAM_ram_dual_port"[label="dual_port_RAM^ram_dual_port~1"];
+	"dual_port_RAM_din~0" [shape=triangle];
+	"dual_port_RAM_din~0" -> "dual_port_RAM_nMUX~1"[label="dual_port_RAM^ram_dual_port~12"];
+	"dual_port_RAM_din~1" [shape=triangle];
+	"dual_port_RAM_din~1" -> "dual_port_RAM_nMUX~1"[label="dual_port_RAM^ram_dual_port~13"];
+	"dual_port_RAM_din~2" [shape=triangle];
+	"dual_port_RAM_din~2" -> "dual_port_RAM_nMUX~1"[label="dual_port_RAM^ram_dual_port~14"];
+	"dual_port_RAM_ZGZ"
+	"dual_port_RAM_ZGZ" -> "dual_port_RAM_nMUX~1"[label="dual_port_RAM^ZGZ"];
+	"dual_port_RAM_ZGZ" -> "dual_port_RAM_nMUX~1"[label="dual_port_RAM^ZGZ"];
+	"dual_port_RAM_ZGZ" -> "dual_port_RAM_nMUX~1"[label="dual_port_RAM^ZGZ"];
+	"dual_port_RAM_ZGZ" -> "dual_port_RAM_nMUX~1"[label="dual_port_RAM^ZGZ"];
+	"dual_port_RAM_ZGZ" -> "dual_port_RAM_nMUX~1"[label="dual_port_RAM^ZGZ"];
+	"dual_port_RAM_ZGZ" -> "dual_port_RAM_nMUX~1"[label="dual_port_RAM^ZGZ"];
+	"dual_port_RAM_ZGZ" -> "dual_port_RAM_ram_dual_port"[label="dual_port_RAM^ZGZ"];
+	"dual_port_RAM_ZGZ" -> "dual_port_RAM_ram_dual_port"[label="dual_port_RAM^ZGZ"];
+	"dual_port_RAM_ZGZ" -> "dual_port_RAM_ram_dual_port"[label="dual_port_RAM^ZGZ"];
+	"dual_port_RAM_ZGZ" -> "dual_port_RAM_ram_dual_port"[label="dual_port_RAM^ZGZ"];
+	"dual_port_RAM_OVC"
+	"dual_port_RAM_OVC" -> "dual_port_RAM_lEQ~2"[label="dual_port_RAM^OVC"];
+	"dual_port_RAM_OVC" -> "dual_port_RAM_nMUX~1"[label="dual_port_RAM^ram_dual_port~15"];
+}

@@ -1,0 +1,31 @@
+VPR FPGA Placement and Routing.
+Version: 8.1.0-dev+7be7cbe3d
+Revision: v8.0.0-3332-g7be7cbe3d
+Compiled: 2021-02-26T03:04:33
+Compiler: GNU 9.3.0 on Linux-5.8.0-44-generic x86_64
+Build Info: release IPO VTR_ASSERT_LEVEL=2
+
+University of Toronto
+verilogtorouting.org
+vtr-users@googlegroups.com
+This is free open source code under MIT license.
+
+VPR was run with the following command-line:
+/home/jiayin/App/vtr/vpr/vpr ../arch/myArch.xml dual_port_ram --circuit_file dual_port_ram.pre-vpr.blif --route_chan_width 8 --analysis --disp on
+
+
+Architecture file: ../arch/myArch.xml
+Circuit name: dual_port_ram
+
+# Loading Architecture Description
+# Loading Architecture Description took 0.00 seconds (max_rss 15.5 MiB, delta_rss +1.5 MiB)
+# Building complex block graph
+# Building complex block graph took 0.00 seconds (max_rss 15.5 MiB, delta_rss +0.0 MiB)
+# Load circuit
+# Load circuit took 0.00 seconds (max_rss 15.5 MiB, delta_rss +0.0 MiB)
+Error 1: 
+Type: Blif file
+File: dual_port_ram.pre-vpr.blif
+Line: 65
+Message: BLIF .names input size (5) greater than .names model input size (4)
+The entire flow of VPR took 0.02 seconds (max_rss 15.5 MiB)

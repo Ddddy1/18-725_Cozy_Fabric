@@ -1,0 +1,5 @@
+vpr_status=exited with return code 4
+vpr_seconds=0
+rundir=/home/jiayin/vtr_work/Example_Arch
+hostname=jiayin-VirtualBox
+error=

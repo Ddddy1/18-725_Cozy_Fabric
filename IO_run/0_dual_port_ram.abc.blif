@@ -1,0 +1,110 @@
+# Benchmark "dual_port_RAM" written by ABC on Mon Mar 22 20:01:11 2021 
+
+.model dual_port_RAM 
+
+.inputs dual_port_RAM^clk dual_port_RAM^we dual_port_RAM^addr_wr~0 dual_port_RAM^addr_wr~1 dual_port_RAM^addr_rd~0 \
+ dual_port_RAM^addr_rd~1 dual_port_RAM^din~0 dual_port_RAM^din~1 
+
+.outputs dual_port_RAM^dout~0 dual_port_RAM^dout~1 
+
+
+.latch n20 dual_port_RAM.ram_dual_port^FF~35 re dual_port_RAM^clk 0 
+
+.latch n25 dual_port_RAM.ram_dual_port^FF~39 re dual_port_RAM^clk 0 
+
+.latch n30 dual_port_RAM.ram_dual_port^FF~43 re dual_port_RAM^clk 0 
+
+.latch n35 dual_port_RAM.ram_dual_port^FF~47 re dual_port_RAM^clk 0 
+
+.latch n40 dual_port_RAM.ram_dual_port^FF~55 re dual_port_RAM^clk 0 
+
+.latch n45 dual_port_RAM.ram_dual_port^FF~59 re dual_port_RAM^clk 0 
+
+.latch n50 dual_port_RAM.ram_dual_port^FF~63 re dual_port_RAM^clk 0 
+
+.latch n55 dual_port_RAM.ram_dual_port^FF~67 re dual_port_RAM^clk 0 
+
+
+
+
+
+.names n38 n39 dual_port_RAM^dout~0 
+11 0 
+
+.names dual_port_RAM.ram_dual_port^FF~35 dual_port_RAM.ram_dual_port^FF~43 dual_port_RAM^addr_rd~0 dual_port_RAM^addr_rd~1 \
+ n38 
+-101 0 
+1-00 0 
+
+.names dual_port_RAM.ram_dual_port^FF~39 dual_port_RAM.ram_dual_port^FF~47 dual_port_RAM^addr_rd~1 dual_port_RAM^addr_rd~0 \
+ n39 
+-111 0 
+1-01 0 
+
+.names n41_1 n42 dual_port_RAM^dout~1 
+11 0 
+
+.names dual_port_RAM.ram_dual_port^FF~63 dual_port_RAM.ram_dual_port^FF~59 dual_port_RAM^addr_rd~0 dual_port_RAM^addr_rd~1 \
+ n41_1 
+-110 0 
+1-01 0 
+
+.names dual_port_RAM.ram_dual_port^FF~55 dual_port_RAM.ram_dual_port^FF~67 dual_port_RAM^addr_rd~1 dual_port_RAM^addr_rd~0 \
+ n42 
+-111 0 
+1-00 0 
+
+.names dual_port_RAM.ram_dual_port^FF~35 dual_port_RAM^din~0 n44 n20 
+-11 1 
+1-0 1 
+
+.names dual_port_RAM^addr_wr~0 dual_port_RAM^addr_wr~1 dual_port_RAM^we n44 
+001 1 
+
+.names dual_port_RAM.ram_dual_port^FF~39 dual_port_RAM^din~0 n46_1 n25 
+-11 1 
+1-0 1 
+
+.names dual_port_RAM^addr_wr~1 dual_port_RAM^addr_wr~0 dual_port_RAM^we n46_1 
+011 1 
+
+.names dual_port_RAM.ram_dual_port^FF~43 dual_port_RAM^din~0 n48 n30 
+-11 1 
+1-0 1 
+
+.names dual_port_RAM^addr_wr~0 dual_port_RAM^we dual_port_RAM^addr_wr~1 n48 
+011 1 
+
+.names dual_port_RAM.ram_dual_port^FF~47 dual_port_RAM^din~0 n50_1 n35 
+-11 1 
+1-0 1 
+
+.names dual_port_RAM^we dual_port_RAM^addr_wr~0 dual_port_RAM^addr_wr~1 n50_1 
+111 1 
+
+.names dual_port_RAM.ram_dual_port^FF~55 dual_port_RAM^din~1 n44 n40 
+-11 1 
+1-0 1 
+
+.names dual_port_RAM.ram_dual_port^FF~59 dual_port_RAM^din~1 n46_1 n45 
+-11 1 
+1-0 1 
+
+.names dual_port_RAM.ram_dual_port^FF~63 dual_port_RAM^din~1 n48 n50 
+-11 1 
+1-0 1 
+
+.names dual_port_RAM.ram_dual_port^FF~67 dual_port_RAM^din~1 n50_1 n55 
+-11 1 
+1-0 1 
+
+
+.end 
+
+
+
+.model CLOCK_GATING
+.inputs I
+.blackbox
+.end
+

@@ -1,0 +1,470 @@
+#Timing report of worst 15 path(s)
+# Unit scale: 1e-09 seconds
+# Output precision: 3
+
+#Path 1
+Startpoint: dual_port_RAM.ram_dual_port^FF~36.Q[0] (.latch clocked by dual_port_RAM^clk)
+Endpoint  : out:dual_port_RAM^dout~0.outpad[0] (.output clocked by dual_port_RAM^clk)
+Path Type : setup
+
+Point                                                                    Incr      Path
+---------------------------------------------------------------------------------------
+clock dual_port_RAM^clk (rise edge)                                     0.000     0.000
+clock source latency                                                    0.000     0.000
+dual_port_RAM^clk.inpad[0] (.input)                                     0.000     0.000
+dual_port_RAM.ram_dual_port^FF~36.clk[0] (.latch)                       1.338     1.338
+dual_port_RAM.ram_dual_port^FF~36.Q[0] (.latch) [clock-to-output]       0.124     1.462
+n52.in[0] (.names)                                                      1.338     2.800
+n52.out[0] (.names)                                                     0.235     3.035
+dual_port_RAM^dout~0.in[3] (.names)                                     1.338     4.372
+dual_port_RAM^dout~0.out[0] (.names)                                    0.235     4.607
+out:dual_port_RAM^dout~0.outpad[0] (.output)                            1.338     5.945
+data arrival time                                                                 5.945
+
+clock dual_port_RAM^clk (rise edge)                                     0.000     0.000
+clock source latency                                                    0.000     0.000
+clock uncertainty                                                       0.000     0.000
+output external delay                                                   0.000     0.000
+data required time                                                                0.000
+---------------------------------------------------------------------------------------
+data required time                                                                0.000
+data arrival time                                                                -5.945
+---------------------------------------------------------------------------------------
+slack (VIOLATED)                                                                 -5.945
+
+
+#Path 2
+Startpoint: dual_port_RAM.ram_dual_port^FF~56.Q[0] (.latch clocked by dual_port_RAM^clk)
+Endpoint  : out:dual_port_RAM^dout~1.outpad[0] (.output clocked by dual_port_RAM^clk)
+Path Type : setup
+
+Point                                                                    Incr      Path
+---------------------------------------------------------------------------------------
+clock dual_port_RAM^clk (rise edge)                                     0.000     0.000
+clock source latency                                                    0.000     0.000
+dual_port_RAM^clk.inpad[0] (.input)                                     0.000     0.000
+dual_port_RAM.ram_dual_port^FF~56.clk[0] (.latch)                       1.338     1.338
+dual_port_RAM.ram_dual_port^FF~56.Q[0] (.latch) [clock-to-output]       0.124     1.462
+n54_1.in[0] (.names)                                                    1.338     2.800
+n54_1.out[0] (.names)                                                   0.235     3.035
+dual_port_RAM^dout~1.in[3] (.names)                                     1.338     4.372
+dual_port_RAM^dout~1.out[0] (.names)                                    0.235     4.607
+out:dual_port_RAM^dout~1.outpad[0] (.output)                            1.338     5.945
+data arrival time                                                                 5.945
+
+clock dual_port_RAM^clk (rise edge)                                     0.000     0.000
+clock source latency                                                    0.000     0.000
+clock uncertainty                                                       0.000     0.000
+output external delay                                                   0.000     0.000
+data required time                                                                0.000
+---------------------------------------------------------------------------------------
+data required time                                                                0.000
+data arrival time                                                                -5.945
+---------------------------------------------------------------------------------------
+slack (VIOLATED)                                                                 -5.945
+
+
+#Path 3
+Startpoint: dual_port_RAM.ram_dual_port^FF~76.Q[0] (.latch clocked by dual_port_RAM^clk)
+Endpoint  : out:dual_port_RAM^dout~2.outpad[0] (.output clocked by dual_port_RAM^clk)
+Path Type : setup
+
+Point                                                                    Incr      Path
+---------------------------------------------------------------------------------------
+clock dual_port_RAM^clk (rise edge)                                     0.000     0.000
+clock source latency                                                    0.000     0.000
+dual_port_RAM^clk.inpad[0] (.input)                                     0.000     0.000
+dual_port_RAM.ram_dual_port^FF~76.clk[0] (.latch)                       1.338     1.338
+dual_port_RAM.ram_dual_port^FF~76.Q[0] (.latch) [clock-to-output]       0.124     1.462
+n56.in[0] (.names)                                                      1.338     2.800
+n56.out[0] (.names)                                                     0.235     3.035
+dual_port_RAM^dout~2.in[3] (.names)                                     1.338     4.372
+dual_port_RAM^dout~2.out[0] (.names)                                    0.235     4.607
+out:dual_port_RAM^dout~2.outpad[0] (.output)                            1.338     5.945
+data arrival time                                                                 5.945
+
+clock dual_port_RAM^clk (rise edge)                                     0.000     0.000
+clock source latency                                                    0.000     0.000
+clock uncertainty                                                       0.000     0.000
+output external delay                                                   0.000     0.000
+data required time                                                                0.000
+---------------------------------------------------------------------------------------
+data required time                                                                0.000
+data arrival time                                                                -5.945
+---------------------------------------------------------------------------------------
+slack (VIOLATED)                                                                 -5.945
+
+
+#Path 4
+Startpoint: dual_port_RAM.ram_dual_port^FF~36.Q[0] (.latch clocked by dual_port_RAM^clk)
+Endpoint  : dual_port_RAM.ram_dual_port^FF~36.D[0] (.latch clocked by dual_port_RAM^clk)
+Path Type : setup
+
+Point                                                                    Incr      Path
+---------------------------------------------------------------------------------------
+clock dual_port_RAM^clk (rise edge)                                     0.000     0.000
+clock source latency                                                    0.000     0.000
+dual_port_RAM^clk.inpad[0] (.input)                                     0.000     0.000
+dual_port_RAM.ram_dual_port^FF~36.clk[0] (.latch)                       1.338     1.338
+dual_port_RAM.ram_dual_port^FF~36.Q[0] (.latch) [clock-to-output]       0.124     1.462
+n23.in[4] (.names)                                                      1.338     2.800
+n23.out[0] (.names)                                                     0.235     3.035
+dual_port_RAM.ram_dual_port^FF~36.D[0] (.latch)                         1.338     4.372
+data arrival time                                                                 4.372
+
+clock dual_port_RAM^clk (rise edge)                                     0.000     0.000
+clock source latency                                                    0.000     0.000
+dual_port_RAM^clk.inpad[0] (.input)                                     0.000     0.000
+dual_port_RAM.ram_dual_port^FF~36.clk[0] (.latch)                       1.338     1.338
+clock uncertainty                                                       0.000     1.338
+cell setup time                                                        -0.066     1.272
+data required time                                                                1.272
+---------------------------------------------------------------------------------------
+data required time                                                                1.272
+data arrival time                                                                -4.372
+---------------------------------------------------------------------------------------
+slack (VIOLATED)                                                                 -3.101
+
+
+#Path 5
+Startpoint: dual_port_RAM.ram_dual_port^FF~56.Q[0] (.latch clocked by dual_port_RAM^clk)
+Endpoint  : dual_port_RAM.ram_dual_port^FF~56.D[0] (.latch clocked by dual_port_RAM^clk)
+Path Type : setup
+
+Point                                                                    Incr      Path
+---------------------------------------------------------------------------------------
+clock dual_port_RAM^clk (rise edge)                                     0.000     0.000
+clock source latency                                                    0.000     0.000
+dual_port_RAM^clk.inpad[0] (.input)                                     0.000     0.000
+dual_port_RAM.ram_dual_port^FF~56.clk[0] (.latch)                       1.338     1.338
+dual_port_RAM.ram_dual_port^FF~56.Q[0] (.latch) [clock-to-output]       0.124     1.462
+n28.in[4] (.names)                                                      1.338     2.800
+n28.out[0] (.names)                                                     0.235     3.035
+dual_port_RAM.ram_dual_port^FF~56.D[0] (.latch)                         1.338     4.372
+data arrival time                                                                 4.372
+
+clock dual_port_RAM^clk (rise edge)                                     0.000     0.000
+clock source latency                                                    0.000     0.000
+dual_port_RAM^clk.inpad[0] (.input)                                     0.000     0.000
+dual_port_RAM.ram_dual_port^FF~56.clk[0] (.latch)                       1.338     1.338
+clock uncertainty                                                       0.000     1.338
+cell setup time                                                        -0.066     1.272
+data required time                                                                1.272
+---------------------------------------------------------------------------------------
+data required time                                                                1.272
+data arrival time                                                                -4.372
+---------------------------------------------------------------------------------------
+slack (VIOLATED)                                                                 -3.101
+
+
+#Path 6
+Startpoint: dual_port_RAM.ram_dual_port^FF~76.Q[0] (.latch clocked by dual_port_RAM^clk)
+Endpoint  : dual_port_RAM.ram_dual_port^FF~76.D[0] (.latch clocked by dual_port_RAM^clk)
+Path Type : setup
+
+Point                                                                    Incr      Path
+---------------------------------------------------------------------------------------
+clock dual_port_RAM^clk (rise edge)                                     0.000     0.000
+clock source latency                                                    0.000     0.000
+dual_port_RAM^clk.inpad[0] (.input)                                     0.000     0.000
+dual_port_RAM.ram_dual_port^FF~76.clk[0] (.latch)                       1.338     1.338
+dual_port_RAM.ram_dual_port^FF~76.Q[0] (.latch) [clock-to-output]       0.124     1.462
+n33.in[4] (.names)                                                      1.338     2.800
+n33.out[0] (.names)                                                     0.235     3.035
+dual_port_RAM.ram_dual_port^FF~76.D[0] (.latch)                         1.338     4.372
+data arrival time                                                                 4.372
+
+clock dual_port_RAM^clk (rise edge)                                     0.000     0.000
+clock source latency                                                    0.000     0.000
+dual_port_RAM^clk.inpad[0] (.input)                                     0.000     0.000
+dual_port_RAM.ram_dual_port^FF~76.clk[0] (.latch)                       1.338     1.338
+clock uncertainty                                                       0.000     1.338
+cell setup time                                                        -0.066     1.272
+data required time                                                                1.272
+---------------------------------------------------------------------------------------
+data required time                                                                1.272
+data arrival time                                                                -4.372
+---------------------------------------------------------------------------------------
+slack (VIOLATED)                                                                 -3.101
+
+
+#Path 7
+Startpoint: dual_port_RAM.ram_dual_port^FF~44.Q[0] (.latch clocked by dual_port_RAM^clk)
+Endpoint  : dual_port_RAM.ram_dual_port^FF~44.D[0] (.latch clocked by dual_port_RAM^clk)
+Path Type : setup
+
+Point                                                                    Incr      Path
+---------------------------------------------------------------------------------------
+clock dual_port_RAM^clk (rise edge)                                     0.000     0.000
+clock source latency                                                    0.000     0.000
+dual_port_RAM^clk.inpad[0] (.input)                                     0.000     0.000
+dual_port_RAM.ram_dual_port^FF~44.clk[0] (.latch)                       1.338     1.338
+dual_port_RAM.ram_dual_port^FF~44.Q[0] (.latch) [clock-to-output]       0.124     1.462
+n38.in[4] (.names)                                                      1.338     2.800
+n38.out[0] (.names)                                                     0.235     3.035
+dual_port_RAM.ram_dual_port^FF~44.D[0] (.latch)                         1.338     4.372
+data arrival time                                                                 4.372
+
+clock dual_port_RAM^clk (rise edge)                                     0.000     0.000
+clock source latency                                                    0.000     0.000
+dual_port_RAM^clk.inpad[0] (.input)                                     0.000     0.000
+dual_port_RAM.ram_dual_port^FF~44.clk[0] (.latch)                       1.338     1.338
+clock uncertainty                                                       0.000     1.338
+cell setup time                                                        -0.066     1.272
+data required time                                                                1.272
+---------------------------------------------------------------------------------------
+data required time                                                                1.272
+data arrival time                                                                -4.372
+---------------------------------------------------------------------------------------
+slack (VIOLATED)                                                                 -3.101
+
+
+#Path 8
+Startpoint: dual_port_RAM.ram_dual_port^FF~64.Q[0] (.latch clocked by dual_port_RAM^clk)
+Endpoint  : dual_port_RAM.ram_dual_port^FF~64.D[0] (.latch clocked by dual_port_RAM^clk)
+Path Type : setup
+
+Point                                                                    Incr      Path
+---------------------------------------------------------------------------------------
+clock dual_port_RAM^clk (rise edge)                                     0.000     0.000
+clock source latency                                                    0.000     0.000
+dual_port_RAM^clk.inpad[0] (.input)                                     0.000     0.000
+dual_port_RAM.ram_dual_port^FF~64.clk[0] (.latch)                       1.338     1.338
+dual_port_RAM.ram_dual_port^FF~64.Q[0] (.latch) [clock-to-output]       0.124     1.462
+n43.in[4] (.names)                                                      1.338     2.800
+n43.out[0] (.names)                                                     0.235     3.035
+dual_port_RAM.ram_dual_port^FF~64.D[0] (.latch)                         1.338     4.372
+data arrival time                                                                 4.372
+
+clock dual_port_RAM^clk (rise edge)                                     0.000     0.000
+clock source latency                                                    0.000     0.000
+dual_port_RAM^clk.inpad[0] (.input)                                     0.000     0.000
+dual_port_RAM.ram_dual_port^FF~64.clk[0] (.latch)                       1.338     1.338
+clock uncertainty                                                       0.000     1.338
+cell setup time                                                        -0.066     1.272
+data required time                                                                1.272
+---------------------------------------------------------------------------------------
+data required time                                                                1.272
+data arrival time                                                                -4.372
+---------------------------------------------------------------------------------------
+slack (VIOLATED)                                                                 -3.101
+
+
+#Path 9
+Startpoint: dual_port_RAM.ram_dual_port^FF~84.Q[0] (.latch clocked by dual_port_RAM^clk)
+Endpoint  : dual_port_RAM.ram_dual_port^FF~84.D[0] (.latch clocked by dual_port_RAM^clk)
+Path Type : setup
+
+Point                                                                    Incr      Path
+---------------------------------------------------------------------------------------
+clock dual_port_RAM^clk (rise edge)                                     0.000     0.000
+clock source latency                                                    0.000     0.000
+dual_port_RAM^clk.inpad[0] (.input)                                     0.000     0.000
+dual_port_RAM.ram_dual_port^FF~84.clk[0] (.latch)                       1.338     1.338
+dual_port_RAM.ram_dual_port^FF~84.Q[0] (.latch) [clock-to-output]       0.124     1.462
+n48.in[4] (.names)                                                      1.338     2.800
+n48.out[0] (.names)                                                     0.235     3.035
+dual_port_RAM.ram_dual_port^FF~84.D[0] (.latch)                         1.338     4.372
+data arrival time                                                                 4.372
+
+clock dual_port_RAM^clk (rise edge)                                     0.000     0.000
+clock source latency                                                    0.000     0.000
+dual_port_RAM^clk.inpad[0] (.input)                                     0.000     0.000
+dual_port_RAM.ram_dual_port^FF~84.clk[0] (.latch)                       1.338     1.338
+clock uncertainty                                                       0.000     1.338
+cell setup time                                                        -0.066     1.272
+data required time                                                                1.272
+---------------------------------------------------------------------------------------
+data required time                                                                1.272
+data arrival time                                                                -4.372
+---------------------------------------------------------------------------------------
+slack (VIOLATED)                                                                 -3.101
+
+
+#Path 10
+Startpoint: dual_port_RAM.ram_dual_port^FF~48.Q[0] (.latch clocked by dual_port_RAM^clk)
+Endpoint  : dual_port_RAM.ram_dual_port^FF~48.D[0] (.latch clocked by dual_port_RAM^clk)
+Path Type : setup
+
+Point                                                                    Incr      Path
+---------------------------------------------------------------------------------------
+clock dual_port_RAM^clk (rise edge)                                     0.000     0.000
+clock source latency                                                    0.000     0.000
+dual_port_RAM^clk.inpad[0] (.input)                                     0.000     0.000
+dual_port_RAM.ram_dual_port^FF~48.clk[0] (.latch)                       1.338     1.338
+dual_port_RAM.ram_dual_port^FF~48.Q[0] (.latch) [clock-to-output]       0.124     1.462
+n53.in[4] (.names)                                                      1.338     2.800
+n53.out[0] (.names)                                                     0.235     3.035
+dual_port_RAM.ram_dual_port^FF~48.D[0] (.latch)                         1.338     4.372
+data arrival time                                                                 4.372
+
+clock dual_port_RAM^clk (rise edge)                                     0.000     0.000
+clock source latency                                                    0.000     0.000
+dual_port_RAM^clk.inpad[0] (.input)                                     0.000     0.000
+dual_port_RAM.ram_dual_port^FF~48.clk[0] (.latch)                       1.338     1.338
+clock uncertainty                                                       0.000     1.338
+cell setup time                                                        -0.066     1.272
+data required time                                                                1.272
+---------------------------------------------------------------------------------------
+data required time                                                                1.272
+data arrival time                                                                -4.372
+---------------------------------------------------------------------------------------
+slack (VIOLATED)                                                                 -3.101
+
+
+#Path 11
+Startpoint: dual_port_RAM.ram_dual_port^FF~68.Q[0] (.latch clocked by dual_port_RAM^clk)
+Endpoint  : dual_port_RAM.ram_dual_port^FF~68.D[0] (.latch clocked by dual_port_RAM^clk)
+Path Type : setup
+
+Point                                                                    Incr      Path
+---------------------------------------------------------------------------------------
+clock dual_port_RAM^clk (rise edge)                                     0.000     0.000
+clock source latency                                                    0.000     0.000
+dual_port_RAM^clk.inpad[0] (.input)                                     0.000     0.000
+dual_port_RAM.ram_dual_port^FF~68.clk[0] (.latch)                       1.338     1.338
+dual_port_RAM.ram_dual_port^FF~68.Q[0] (.latch) [clock-to-output]       0.124     1.462
+n58.in[4] (.names)                                                      1.338     2.800
+n58.out[0] (.names)                                                     0.235     3.035
+dual_port_RAM.ram_dual_port^FF~68.D[0] (.latch)                         1.338     4.372
+data arrival time                                                                 4.372
+
+clock dual_port_RAM^clk (rise edge)                                     0.000     0.000
+clock source latency                                                    0.000     0.000
+dual_port_RAM^clk.inpad[0] (.input)                                     0.000     0.000
+dual_port_RAM.ram_dual_port^FF~68.clk[0] (.latch)                       1.338     1.338
+clock uncertainty                                                       0.000     1.338
+cell setup time                                                        -0.066     1.272
+data required time                                                                1.272
+---------------------------------------------------------------------------------------
+data required time                                                                1.272
+data arrival time                                                                -4.372
+---------------------------------------------------------------------------------------
+slack (VIOLATED)                                                                 -3.101
+
+
+#Path 12
+Startpoint: dual_port_RAM.ram_dual_port^FF~88.Q[0] (.latch clocked by dual_port_RAM^clk)
+Endpoint  : dual_port_RAM.ram_dual_port^FF~88.D[0] (.latch clocked by dual_port_RAM^clk)
+Path Type : setup
+
+Point                                                                    Incr      Path
+---------------------------------------------------------------------------------------
+clock dual_port_RAM^clk (rise edge)                                     0.000     0.000
+clock source latency                                                    0.000     0.000
+dual_port_RAM^clk.inpad[0] (.input)                                     0.000     0.000
+dual_port_RAM.ram_dual_port^FF~88.clk[0] (.latch)                       1.338     1.338
+dual_port_RAM.ram_dual_port^FF~88.Q[0] (.latch) [clock-to-output]       0.124     1.462
+n63.in[4] (.names)                                                      1.338     2.800
+n63.out[0] (.names)                                                     0.235     3.035
+dual_port_RAM.ram_dual_port^FF~88.D[0] (.latch)                         1.338     4.372
+data arrival time                                                                 4.372
+
+clock dual_port_RAM^clk (rise edge)                                     0.000     0.000
+clock source latency                                                    0.000     0.000
+dual_port_RAM^clk.inpad[0] (.input)                                     0.000     0.000
+dual_port_RAM.ram_dual_port^FF~88.clk[0] (.latch)                       1.338     1.338
+clock uncertainty                                                       0.000     1.338
+cell setup time                                                        -0.066     1.272
+data required time                                                                1.272
+---------------------------------------------------------------------------------------
+data required time                                                                1.272
+data arrival time                                                                -4.372
+---------------------------------------------------------------------------------------
+slack (VIOLATED)                                                                 -3.101
+
+
+#Path 13
+Startpoint: dual_port_RAM.ram_dual_port^FF~40.Q[0] (.latch clocked by dual_port_RAM^clk)
+Endpoint  : dual_port_RAM.ram_dual_port^FF~40.D[0] (.latch clocked by dual_port_RAM^clk)
+Path Type : setup
+
+Point                                                                    Incr      Path
+---------------------------------------------------------------------------------------
+clock dual_port_RAM^clk (rise edge)                                     0.000     0.000
+clock source latency                                                    0.000     0.000
+dual_port_RAM^clk.inpad[0] (.input)                                     0.000     0.000
+dual_port_RAM.ram_dual_port^FF~40.clk[0] (.latch)                       1.338     1.338
+dual_port_RAM.ram_dual_port^FF~40.Q[0] (.latch) [clock-to-output]       0.124     1.462
+n68.in[4] (.names)                                                      1.338     2.800
+n68.out[0] (.names)                                                     0.235     3.035
+dual_port_RAM.ram_dual_port^FF~40.D[0] (.latch)                         1.338     4.372
+data arrival time                                                                 4.372
+
+clock dual_port_RAM^clk (rise edge)                                     0.000     0.000
+clock source latency                                                    0.000     0.000
+dual_port_RAM^clk.inpad[0] (.input)                                     0.000     0.000
+dual_port_RAM.ram_dual_port^FF~40.clk[0] (.latch)                       1.338     1.338
+clock uncertainty                                                       0.000     1.338
+cell setup time                                                        -0.066     1.272
+data required time                                                                1.272
+---------------------------------------------------------------------------------------
+data required time                                                                1.272
+data arrival time                                                                -4.372
+---------------------------------------------------------------------------------------
+slack (VIOLATED)                                                                 -3.101
+
+
+#Path 14
+Startpoint: dual_port_RAM.ram_dual_port^FF~60.Q[0] (.latch clocked by dual_port_RAM^clk)
+Endpoint  : dual_port_RAM.ram_dual_port^FF~60.D[0] (.latch clocked by dual_port_RAM^clk)
+Path Type : setup
+
+Point                                                                    Incr      Path
+---------------------------------------------------------------------------------------
+clock dual_port_RAM^clk (rise edge)                                     0.000     0.000
+clock source latency                                                    0.000     0.000
+dual_port_RAM^clk.inpad[0] (.input)                                     0.000     0.000
+dual_port_RAM.ram_dual_port^FF~60.clk[0] (.latch)                       1.338     1.338
+dual_port_RAM.ram_dual_port^FF~60.Q[0] (.latch) [clock-to-output]       0.124     1.462
+n73.in[4] (.names)                                                      1.338     2.800
+n73.out[0] (.names)                                                     0.235     3.035
+dual_port_RAM.ram_dual_port^FF~60.D[0] (.latch)                         1.338     4.372
+data arrival time                                                                 4.372
+
+clock dual_port_RAM^clk (rise edge)                                     0.000     0.000
+clock source latency                                                    0.000     0.000
+dual_port_RAM^clk.inpad[0] (.input)                                     0.000     0.000
+dual_port_RAM.ram_dual_port^FF~60.clk[0] (.latch)                       1.338     1.338
+clock uncertainty                                                       0.000     1.338
+cell setup time                                                        -0.066     1.272
+data required time                                                                1.272
+---------------------------------------------------------------------------------------
+data required time                                                                1.272
+data arrival time                                                                -4.372
+---------------------------------------------------------------------------------------
+slack (VIOLATED)                                                                 -3.101
+
+
+#Path 15
+Startpoint: dual_port_RAM.ram_dual_port^FF~80.Q[0] (.latch clocked by dual_port_RAM^clk)
+Endpoint  : dual_port_RAM.ram_dual_port^FF~80.D[0] (.latch clocked by dual_port_RAM^clk)
+Path Type : setup
+
+Point                                                                    Incr      Path
+---------------------------------------------------------------------------------------
+clock dual_port_RAM^clk (rise edge)                                     0.000     0.000
+clock source latency                                                    0.000     0.000
+dual_port_RAM^clk.inpad[0] (.input)                                     0.000     0.000
+dual_port_RAM.ram_dual_port^FF~80.clk[0] (.latch)                       1.338     1.338
+dual_port_RAM.ram_dual_port^FF~80.Q[0] (.latch) [clock-to-output]       0.124     1.462
+n78.in[4] (.names)                                                      1.338     2.800
+n78.out[0] (.names)                                                     0.235     3.035
+dual_port_RAM.ram_dual_port^FF~80.D[0] (.latch)                         1.338     4.372
+data arrival time                                                                 4.372
+
+clock dual_port_RAM^clk (rise edge)                                     0.000     0.000
+clock source latency                                                    0.000     0.000
+dual_port_RAM^clk.inpad[0] (.input)                                     0.000     0.000
+dual_port_RAM.ram_dual_port^FF~80.clk[0] (.latch)                       1.338     1.338
+clock uncertainty                                                       0.000     1.338
+cell setup time                                                        -0.066     1.272
+data required time                                                                1.272
+---------------------------------------------------------------------------------------
+data required time                                                                1.272
+data arrival time                                                                -4.372
+---------------------------------------------------------------------------------------
+slack (VIOLATED)                                                                 -3.101
+
+
+#End of timing report
