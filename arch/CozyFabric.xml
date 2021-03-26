@@ -60,15 +60,15 @@
     <fixed_layout name="Fixed_Layout_Tong" width="10" height="10">
       <!--COZY-FABRIC SPECIFIC: number of inputs = 3 3 2 2 (left right top bottom) -->
       <single type="io" x="0" y="1" priority="100"/>
+      <single type="io" x="0" y="2" priority="100"/>
+      <single type="io" x="0" y="3" priority="100"/>
+      <single type="io" x="0" y="4" priority="100"/>
       <single type="io" x="0" y="5" priority="100"/>
+      <single type="io" x="0" y="6" priority="100"/>
+      <single type="io" x="0" y="7" priority="100"/>
       <single type="io" x="0" y="8" priority="100"/>
-      <single type="io" x="9" y="1" priority="100"/>
-      <single type="io" x="9" y="4" priority="100"/>
-      <single type="io" x="9" y="8" priority="100"/>
-      <single type="io" x="3" y="9" priority="100"/>
-      <single type="io" x="6" y="9" priority="100"/>
-      <single type="io" x="3" y="0" priority="100"/>
-      <single type="io" x="6" y="0" priority="100"/>
+      <single type="io" x="1" y="0" priority="100"/>
+      <single type="io" x="2" y="0" priority="100"/>
       <!--'EMPTY' blocks at corners-->
       <corners type="EMPTY" priority="101"/>
       <!--COZY-FABRIC SPECIFIC:Fill unused IO locationed with 'EMPTY' blocks-->

@@ -1,4 +1,4 @@
-# Benchmark "dual_port_RAM" written by ABC on Mon Mar 22 20:01:11 2021
+# Benchmark "dual_port_RAM" written by ABC on Fri Mar 26 00:20:08 2021
 .model dual_port_RAM
 .inputs dual_port_RAM^clk dual_port_RAM^we dual_port_RAM^addr_wr~0 \
  dual_port_RAM^addr_wr~1 dual_port_RAM^addr_rd~0 dual_port_RAM^addr_rd~1 \

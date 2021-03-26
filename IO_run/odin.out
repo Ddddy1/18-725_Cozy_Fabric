@@ -47,13 +47,13 @@ Total number of node:                     66
 Longest path:                             14
 Average path:                             5
 
-Elaboration Time: 1.2ms
+Elaboration Time: 1.3ms
 --------------------------------------------------------------------
 
 --------------------------------------------------------------------
-Total time: 1.8ms
+Total time: 2.0ms
 Odin ran with exit status: 0
-Odin II took 0.00 seconds (max_rss 5.0 MiB)
+Odin II took 0.00 seconds (max_rss 4.9 MiB)
 	Command being timed: "/home/jiayin/App/vtr/ODIN_II/odin_II --adder_type default -U0 -c odin_config.xml"
 	User time (seconds): 0.00
 	System time (seconds): 0.00
@@ -63,12 +63,12 @@ Odin II took 0.00 seconds (max_rss 5.0 MiB)
 	Average unshared data size (kbytes): 0
 	Average stack size (kbytes): 0
 	Average total size (kbytes): 0
-	Maximum resident set size (kbytes): 5388
+	Maximum resident set size (kbytes): 5376
 	Average resident set size (kbytes): 0
 	Major (requiring I/O) page faults: 0
 	Minor (reclaiming a frame) page faults: 245
 	Voluntary context switches: 1
-	Involuntary context switches: 16
+	Involuntary context switches: 18
 	Swaps: 0
 	File system inputs: 0
 	File system outputs: 56

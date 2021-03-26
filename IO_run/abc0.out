@@ -52,15 +52,15 @@ AIG       : PI = 8. PO = 3. Latch = 8. Node = 51.  Ave SAT vars = 0.
 SAT calls : Proof = 0. Cex = 0. Fail = 0. Lits proved = 0.
 SAT solver: Vars max = 31. Calls max = 0. Recycles = 0. Sim rounds = 0.
 NBeg = 51. NEnd = 51. (Gain =   0.00 %).  RBeg = 8. REnd = 8. (Gain =   0.00 %).
-BMC         =     0.00 sec (  0.68 %)
-Spec reduce =     0.00 sec (  1.65 %)
+BMC         =     0.00 sec (  0.53 %)
+Spec reduce =     0.00 sec (  1.33 %)
 Mark cones  =     0.00 sec (  0.00 %)
 Sim SAT     =     0.00 sec (  0.00 %)
 SAT solving =     0.00 sec (  0.00 %)
   unsat     =     0.00 sec (  0.00 %)
   sat       =     0.00 sec (  0.00 %)
   undecided =     0.00 sec (  0.00 %)
-Other       =     0.00 sec ( 97.67 %)
+Other       =     0.00 sec ( 98.14 %)
 TOTAL       =     0.00 sec (100.00 %)
 Starting:  dual_port_RAM   : pi =     8  po =     3  lat =     8  and =      51  lev =   5
 Rewrite:   dual_port_RAM   : pi =     8  po =     3  lat =     8  and =      51  lev =   5
@@ -83,11 +83,11 @@ Performing MFS with 16 PIs, 11 POs, 18 nodes (18 flexible, 0 fixed, 0 empty).
 Nodes = 18. Try = 18. Resub = 0. Div = 60 (ave = 3). SAT calls = 228. Timeouts = 0. MaxDivs = 0.
 Attempts :   Remove      0 out of     56 (  0.00 %)   Resub       0 out of      4 (  0.00 %)   
 Reduction:   Nodes       0 out of     18 (  0.00 %)   Edges       0 out of     56 (  0.00 %)   
-Win =     0.00 sec (  2.05 %)
-Div =     0.00 sec (  1.54 %)
-Cnf =     0.00 sec (  5.48 %)
-Sat =     0.00 sec ( 40.92 %)
-Oth =     0.00 sec ( 50.00 %)
+Win =     0.00 sec (  1.84 %)
+Div =     0.00 sec (  1.84 %)
+Cnf =     0.00 sec (  5.84 %)
+Sat =     0.00 sec ( 47.75 %)
+Oth =     0.00 sec ( 42.74 %)
 ALL =     0.00 sec (100.00 %)
 [1;37mdual_port_RAM                 :[0m i/o =    8/    3  lat =    8  nd =    18  edge =     56  cube =    30  lev = 2
 elapse: 0.02 seconds, total: 0.02 seconds
@@ -97,20 +97,20 @@ Output Netlist
 Hierarchy writer reintroduced 1 instances of blackboxes.
 elapse: 0.00 seconds, total: 0.02 seconds
 	Command being timed: "/home/jiayin/App/vtr/abc/abc -c echo ""; echo "Load Netlist"; echo "============"; read 0_dual_port_ram.odin.blif; time; echo ""; echo "Circuit Info"; echo "=========="; print_stats; print_latch; time; echo ""; echo "LUT Costs"; echo "========="; print_lut; time; echo ""; echo "Logic Opt + Techmap"; echo "==================="; strash; ifraig -v; scorr -v; dc2 -v; dch -f; if -K 4 -v; mfs2 -v; print_stats; time; echo ""; echo "Output Netlist"; echo "=============="; write_hie 0_dual_port_ram.odin.blif 0_dual_port_ram.raw.abc.blif; time;"
-	User time (seconds): 0.03
+	User time (seconds): 0.04
 	System time (seconds): 0.00
-	Percent of CPU this job got: 93%
-	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.04
+	Percent of CPU this job got: 94%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.05
 	Average shared text size (kbytes): 0
 	Average unshared data size (kbytes): 0
 	Average stack size (kbytes): 0
 	Average total size (kbytes): 0
-	Maximum resident set size (kbytes): 35380
+	Maximum resident set size (kbytes): 35384
 	Average resident set size (kbytes): 0
 	Major (requiring I/O) page faults: 0
-	Minor (reclaiming a frame) page faults: 8324
+	Minor (reclaiming a frame) page faults: 8326
 	Voluntary context switches: 1
-	Involuntary context switches: 25
+	Involuntary context switches: 27
 	Swaps: 0
 	File system inputs: 0
 	File system outputs: 8

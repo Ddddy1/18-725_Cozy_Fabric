@@ -1,11 +1,11 @@
 <?xml version="1.0"?>
-<block name="dual_port_ram.net.post_routing" instance="FPGA_packed_netlist[0]" architecture_id="SHA256:1758488b3f9b69c99471b50f3253bd59090521e165a8c220bb70e1745785a1db" atom_netlist_id="SHA256:4e2205406816da140db9c7e5bb363ccad2f0e013b40211d967bc48c940be3285">
+<block name="dual_port_ram.net.post_routing" instance="FPGA_packed_netlist[0]" architecture_id="SHA256:1734fb70f615aa865e8cf20b4e9cd18d6348b7ed53ae5de2dc6585b090009c70" atom_netlist_id="SHA256:20cd9d4e1aa1ba26a7a69e592e1105cba2a40035ca1b691cec2fed79592e292b">
 	<inputs>dual_port_RAM^clk dual_port_RAM^we dual_port_RAM^addr_wr~0 dual_port_RAM^addr_wr~1 dual_port_RAM^addr_rd~0 dual_port_RAM^addr_rd~1 dual_port_RAM^din~0 dual_port_RAM^din~1</inputs>
 	<outputs>out:dual_port_RAM^dout~0 out:dual_port_RAM^dout~1</outputs>
 	<clocks>dual_port_RAM^clk</clocks>
 	<block name="n20" instance="clb[0]" mode="default">
 		<inputs>
-			<port name="I1">n44 dual_port_RAM^din~0 open open</port>
+			<port name="I1">dual_port_RAM^din~0 n44 open open</port>
 		</inputs>
 		<outputs>
 			<port name="O">flut5[0].out[0]-&gt;clbouts1</port>
@@ -15,7 +15,7 @@
 		</clocks>
 		<block name="n20" instance="flut5[0]" mode="default">
 			<inputs>
-				<port name="in">flut5[0].out[0]-&gt;lutA open clb.I1[1]-&gt;lutA clb.I1[0]-&gt;lutA</port>
+				<port name="in">flut5[0].out[0]-&gt;lutA open clb.I1[0]-&gt;lutA clb.I1[1]-&gt;lutA</port>
 			</inputs>
 			<outputs>
 				<port name="out">ff[0].Q[0]-&gt;mux1</port>
@@ -61,7 +61,7 @@
 	</block>
 	<block name="n25" instance="clb[1]" mode="default">
 		<inputs>
-			<port name="I1">n46_1 open dual_port_RAM^din~0 open</port>
+			<port name="I1">open dual_port_RAM^din~0 n46_1 open</port>
 		</inputs>
 		<outputs>
 			<port name="O">flut5[0].out[0]-&gt;clbouts1</port>
@@ -71,7 +71,7 @@
 		</clocks>
 		<block name="n25" instance="flut5[0]" mode="default">
 			<inputs>
-				<port name="in">flut5[0].out[0]-&gt;lutA open clb.I1[2]-&gt;lutA clb.I1[0]-&gt;lutA</port>
+				<port name="in">flut5[0].out[0]-&gt;lutA open clb.I1[1]-&gt;lutA clb.I1[2]-&gt;lutA</port>
 			</inputs>
 			<outputs>
 				<port name="out">ff[0].Q[0]-&gt;mux1</port>
@@ -173,7 +173,7 @@
 	</block>
 	<block name="n35" instance="clb[3]" mode="default">
 		<inputs>
-			<port name="I1">n50_1 open dual_port_RAM^din~0 open</port>
+			<port name="I1">dual_port_RAM^din~0 open open n50_1</port>
 		</inputs>
 		<outputs>
 			<port name="O">flut5[0].out[0]-&gt;clbouts1</port>
@@ -183,7 +183,7 @@
 		</clocks>
 		<block name="n35" instance="flut5[0]" mode="default">
 			<inputs>
-				<port name="in">flut5[0].out[0]-&gt;lutA open clb.I1[2]-&gt;lutA clb.I1[0]-&gt;lutA</port>
+				<port name="in">flut5[0].out[0]-&gt;lutA open clb.I1[0]-&gt;lutA clb.I1[3]-&gt;lutA</port>
 			</inputs>
 			<outputs>
 				<port name="out">ff[0].Q[0]-&gt;mux1</port>
@@ -229,7 +229,7 @@
 	</block>
 	<block name="n40" instance="clb[4]" mode="default">
 		<inputs>
-			<port name="I1">n44 open dual_port_RAM^din~1 open</port>
+			<port name="I1">n44 dual_port_RAM^din~1 open open</port>
 		</inputs>
 		<outputs>
 			<port name="O">flut5[0].out[0]-&gt;clbouts1</port>
@@ -239,7 +239,7 @@
 		</clocks>
 		<block name="n40" instance="flut5[0]" mode="default">
 			<inputs>
-				<port name="in">flut5[0].out[0]-&gt;lutA open clb.I1[2]-&gt;lutA clb.I1[0]-&gt;lutA</port>
+				<port name="in">flut5[0].out[0]-&gt;lutA open clb.I1[1]-&gt;lutA clb.I1[0]-&gt;lutA</port>
 			</inputs>
 			<outputs>
 				<port name="out">ff[0].Q[0]-&gt;mux1</port>
@@ -285,7 +285,7 @@
 	</block>
 	<block name="n45" instance="clb[5]" mode="default">
 		<inputs>
-			<port name="I1">open dual_port_RAM^din~1 open n46_1</port>
+			<port name="I1">dual_port_RAM^din~1 n46_1 open open</port>
 		</inputs>
 		<outputs>
 			<port name="O">flut5[0].out[0]-&gt;clbouts1</port>
@@ -295,7 +295,7 @@
 		</clocks>
 		<block name="n45" instance="flut5[0]" mode="default">
 			<inputs>
-				<port name="in">flut5[0].out[0]-&gt;lutA open clb.I1[1]-&gt;lutA clb.I1[3]-&gt;lutA</port>
+				<port name="in">flut5[0].out[0]-&gt;lutA open clb.I1[0]-&gt;lutA clb.I1[1]-&gt;lutA</port>
 			</inputs>
 			<outputs>
 				<port name="out">ff[0].Q[0]-&gt;mux1</port>
@@ -341,7 +341,7 @@
 	</block>
 	<block name="n50" instance="clb[6]" mode="default">
 		<inputs>
-			<port name="I1">n48 dual_port_RAM^din~1 open open</port>
+			<port name="I1">open dual_port_RAM^din~1 open n48</port>
 		</inputs>
 		<outputs>
 			<port name="O">flut5[0].out[0]-&gt;clbouts1</port>
@@ -351,7 +351,7 @@
 		</clocks>
 		<block name="n50" instance="flut5[0]" mode="default">
 			<inputs>
-				<port name="in">flut5[0].out[0]-&gt;lutA open clb.I1[1]-&gt;lutA clb.I1[0]-&gt;lutA</port>
+				<port name="in">flut5[0].out[0]-&gt;lutA open clb.I1[1]-&gt;lutA clb.I1[3]-&gt;lutA</port>
 			</inputs>
 			<outputs>
 				<port name="out">ff[0].Q[0]-&gt;mux1</port>
@@ -397,7 +397,7 @@
 	</block>
 	<block name="n55" instance="clb[7]" mode="default">
 		<inputs>
-			<port name="I1">open open dual_port_RAM^din~1 n50_1</port>
+			<port name="I1">open dual_port_RAM^din~1 open n50_1</port>
 		</inputs>
 		<outputs>
 			<port name="O">flut5[0].out[0]-&gt;clbouts1</port>
@@ -407,7 +407,7 @@
 		</clocks>
 		<block name="n55" instance="flut5[0]" mode="default">
 			<inputs>
-				<port name="in">flut5[0].out[0]-&gt;lutA open clb.I1[2]-&gt;lutA clb.I1[3]-&gt;lutA</port>
+				<port name="in">flut5[0].out[0]-&gt;lutA open clb.I1[1]-&gt;lutA clb.I1[3]-&gt;lutA</port>
 			</inputs>
 			<outputs>
 				<port name="out">ff[0].Q[0]-&gt;mux1</port>
@@ -453,7 +453,7 @@
 	</block>
 	<block name="n38" instance="clb[8]" mode="default">
 		<inputs>
-			<port name="I1">dual_port_RAM.ram_dual_port^FF~35 dual_port_RAM.ram_dual_port^FF~43 dual_port_RAM^addr_rd~1 dual_port_RAM^addr_rd~0</port>
+			<port name="I1">dual_port_RAM.ram_dual_port^FF~43 dual_port_RAM^addr_rd~1 dual_port_RAM^addr_rd~0 dual_port_RAM.ram_dual_port^FF~35</port>
 		</inputs>
 		<outputs>
 			<port name="O">flut5[0].out[0]-&gt;clbouts1</port>
@@ -463,7 +463,7 @@
 		</clocks>
 		<block name="n38" instance="flut5[0]" mode="default">
 			<inputs>
-				<port name="in">clb.I1[3]-&gt;lutA clb.I1[1]-&gt;lutA clb.I1[0]-&gt;lutA clb.I1[2]-&gt;lutA</port>
+				<port name="in">clb.I1[2]-&gt;lutA clb.I1[0]-&gt;lutA clb.I1[3]-&gt;lutA clb.I1[1]-&gt;lutA</port>
 			</inputs>
 			<outputs>
 				<port name="out">lut5[0].out[0]-&gt;mux1</port>
@@ -497,7 +497,7 @@
 	</block>
 	<block name="n39" instance="clb[9]" mode="default">
 		<inputs>
-			<port name="I1">dual_port_RAM^addr_rd~1 dual_port_RAM.ram_dual_port^FF~39 dual_port_RAM.ram_dual_port^FF~47 dual_port_RAM^addr_rd~0</port>
+			<port name="I1">dual_port_RAM^addr_rd~0 dual_port_RAM.ram_dual_port^FF~39 dual_port_RAM^addr_rd~1 dual_port_RAM.ram_dual_port^FF~47</port>
 		</inputs>
 		<outputs>
 			<port name="O">flut5[0].out[0]-&gt;clbouts1</port>
@@ -507,7 +507,7 @@
 		</clocks>
 		<block name="n39" instance="flut5[0]" mode="default">
 			<inputs>
-				<port name="in">clb.I1[0]-&gt;lutA clb.I1[2]-&gt;lutA clb.I1[1]-&gt;lutA clb.I1[3]-&gt;lutA</port>
+				<port name="in">clb.I1[2]-&gt;lutA clb.I1[3]-&gt;lutA clb.I1[1]-&gt;lutA clb.I1[0]-&gt;lutA</port>
 			</inputs>
 			<outputs>
 				<port name="out">lut5[0].out[0]-&gt;mux1</port>
@@ -541,7 +541,7 @@
 	</block>
 	<block name="n41_1" instance="clb[10]" mode="default">
 		<inputs>
-			<port name="I1">dual_port_RAM.ram_dual_port^FF~63 dual_port_RAM^addr_rd~1 dual_port_RAM.ram_dual_port^FF~59 dual_port_RAM^addr_rd~0</port>
+			<port name="I1">dual_port_RAM^addr_rd~0 dual_port_RAM.ram_dual_port^FF~59 dual_port_RAM^addr_rd~1 dual_port_RAM.ram_dual_port^FF~63</port>
 		</inputs>
 		<outputs>
 			<port name="O">flut5[0].out[0]-&gt;clbouts1</port>
@@ -551,7 +551,7 @@
 		</clocks>
 		<block name="n41_1" instance="flut5[0]" mode="default">
 			<inputs>
-				<port name="in">clb.I1[3]-&gt;lutA clb.I1[2]-&gt;lutA clb.I1[0]-&gt;lutA clb.I1[1]-&gt;lutA</port>
+				<port name="in">clb.I1[0]-&gt;lutA clb.I1[1]-&gt;lutA clb.I1[3]-&gt;lutA clb.I1[2]-&gt;lutA</port>
 			</inputs>
 			<outputs>
 				<port name="out">lut5[0].out[0]-&gt;mux1</port>
@@ -585,7 +585,7 @@
 	</block>
 	<block name="n42" instance="clb[11]" mode="default">
 		<inputs>
-			<port name="I1">dual_port_RAM.ram_dual_port^FF~67 dual_port_RAM.ram_dual_port^FF~55 dual_port_RAM^addr_rd~0 dual_port_RAM^addr_rd~1</port>
+			<port name="I1">dual_port_RAM^addr_rd~0 dual_port_RAM.ram_dual_port^FF~67 dual_port_RAM^addr_rd~1 dual_port_RAM.ram_dual_port^FF~55</port>
 		</inputs>
 		<outputs>
 			<port name="O">flut5[0].out[0]-&gt;clbouts1</port>
@@ -595,7 +595,7 @@
 		</clocks>
 		<block name="n42" instance="flut5[0]" mode="default">
 			<inputs>
-				<port name="in">clb.I1[3]-&gt;lutA clb.I1[0]-&gt;lutA clb.I1[1]-&gt;lutA clb.I1[2]-&gt;lutA</port>
+				<port name="in">clb.I1[2]-&gt;lutA clb.I1[1]-&gt;lutA clb.I1[3]-&gt;lutA clb.I1[0]-&gt;lutA</port>
 			</inputs>
 			<outputs>
 				<port name="out">lut5[0].out[0]-&gt;mux1</port>
@@ -629,7 +629,7 @@
 	</block>
 	<block name="n44" instance="clb[12]" mode="default">
 		<inputs>
-			<port name="I1">open dual_port_RAM^addr_wr~0 dual_port_RAM^addr_wr~1 dual_port_RAM^we</port>
+			<port name="I1">open dual_port_RAM^we dual_port_RAM^addr_wr~1 dual_port_RAM^addr_wr~0</port>
 		</inputs>
 		<outputs>
 			<port name="O">flut5[0].out[0]-&gt;clbouts1</port>
@@ -639,7 +639,7 @@
 		</clocks>
 		<block name="n44" instance="flut5[0]" mode="default">
 			<inputs>
-				<port name="in">open clb.I1[2]-&gt;lutA clb.I1[1]-&gt;lutA clb.I1[3]-&gt;lutA</port>
+				<port name="in">open clb.I1[2]-&gt;lutA clb.I1[3]-&gt;lutA clb.I1[1]-&gt;lutA</port>
 			</inputs>
 			<outputs>
 				<port name="out">lut5[0].out[0]-&gt;mux1</port>
@@ -673,7 +673,7 @@
 	</block>
 	<block name="n46_1" instance="clb[13]" mode="default">
 		<inputs>
-			<port name="I1">dual_port_RAM^we dual_port_RAM^addr_wr~0 dual_port_RAM^addr_wr~1 open</port>
+			<port name="I1">dual_port_RAM^addr_wr~0 dual_port_RAM^addr_wr~1 open dual_port_RAM^we</port>
 		</inputs>
 		<outputs>
 			<port name="O">flut5[0].out[0]-&gt;clbouts1</port>
@@ -683,7 +683,7 @@
 		</clocks>
 		<block name="n46_1" instance="flut5[0]" mode="default">
 			<inputs>
-				<port name="in">open clb.I1[1]-&gt;lutA clb.I1[2]-&gt;lutA clb.I1[0]-&gt;lutA</port>
+				<port name="in">open clb.I1[0]-&gt;lutA clb.I1[1]-&gt;lutA clb.I1[3]-&gt;lutA</port>
 			</inputs>
 			<outputs>
 				<port name="out">lut5[0].out[0]-&gt;mux1</port>
@@ -717,7 +717,7 @@
 	</block>
 	<block name="n48" instance="clb[14]" mode="default">
 		<inputs>
-			<port name="I1">dual_port_RAM^we dual_port_RAM^addr_wr~0 dual_port_RAM^addr_wr~1 open</port>
+			<port name="I1">dual_port_RAM^we dual_port_RAM^addr_wr~1 open dual_port_RAM^addr_wr~0</port>
 		</inputs>
 		<outputs>
 			<port name="O">flut5[0].out[0]-&gt;clbouts1</port>
@@ -727,7 +727,7 @@
 		</clocks>
 		<block name="n48" instance="flut5[0]" mode="default">
 			<inputs>
-				<port name="in">open clb.I1[0]-&gt;lutA clb.I1[1]-&gt;lutA clb.I1[2]-&gt;lutA</port>
+				<port name="in">open clb.I1[0]-&gt;lutA clb.I1[3]-&gt;lutA clb.I1[1]-&gt;lutA</port>
 			</inputs>
 			<outputs>
 				<port name="out">lut5[0].out[0]-&gt;mux1</port>
@@ -761,7 +761,7 @@
 	</block>
 	<block name="n50_1" instance="clb[15]" mode="default">
 		<inputs>
-			<port name="I1">dual_port_RAM^we open dual_port_RAM^addr_wr~0 dual_port_RAM^addr_wr~1</port>
+			<port name="I1">dual_port_RAM^addr_wr~1 dual_port_RAM^addr_wr~0 open dual_port_RAM^we</port>
 		</inputs>
 		<outputs>
 			<port name="O">flut5[0].out[0]-&gt;clbouts1</port>
@@ -771,7 +771,7 @@
 		</clocks>
 		<block name="n50_1" instance="flut5[0]" mode="default">
 			<inputs>
-				<port name="in">open clb.I1[2]-&gt;lutA clb.I1[0]-&gt;lutA clb.I1[3]-&gt;lutA</port>
+				<port name="in">open clb.I1[1]-&gt;lutA clb.I1[3]-&gt;lutA clb.I1[0]-&gt;lutA</port>
 			</inputs>
 			<outputs>
 				<port name="out">lut5[0].out[0]-&gt;mux1</port>
@@ -805,7 +805,7 @@
 	</block>
 	<block name="dual_port_RAM^dout~0" instance="clb[16]" mode="default">
 		<inputs>
-			<port name="I1">n38 n39 open open</port>
+			<port name="I1">n39 n38 open open</port>
 		</inputs>
 		<outputs>
 			<port name="O">flut5[0].out[0]-&gt;clbouts1</port>
@@ -815,7 +815,7 @@
 		</clocks>
 		<block name="dual_port_RAM^dout~0" instance="flut5[0]" mode="default">
 			<inputs>
-				<port name="in">open clb.I1[1]-&gt;lutA open clb.I1[0]-&gt;lutA</port>
+				<port name="in">open clb.I1[0]-&gt;lutA open clb.I1[1]-&gt;lutA</port>
 			</inputs>
 			<outputs>
 				<port name="out">lut5[0].out[0]-&gt;mux1</port>
@@ -849,7 +849,7 @@
 	</block>
 	<block name="dual_port_RAM^dout~1" instance="clb[17]" mode="default">
 		<inputs>
-			<port name="I1">n41_1 n42 open open</port>
+			<port name="I1">open n41_1 n42 open</port>
 		</inputs>
 		<outputs>
 			<port name="O">flut5[0].out[0]-&gt;clbouts1</port>
@@ -859,7 +859,7 @@
 		</clocks>
 		<block name="dual_port_RAM^dout~1" instance="flut5[0]" mode="default">
 			<inputs>
-				<port name="in">open clb.I1[1]-&gt;lutA open clb.I1[0]-&gt;lutA</port>
+				<port name="in">open clb.I1[2]-&gt;lutA open clb.I1[1]-&gt;lutA</port>
 			</inputs>
 			<outputs>
 				<port name="out">lut5[0].out[0]-&gt;mux1</port>

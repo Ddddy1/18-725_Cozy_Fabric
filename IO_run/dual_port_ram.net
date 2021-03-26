@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<block name="dual_port_ram.net" instance="FPGA_packed_netlist[0]" architecture_id="SHA256:1758488b3f9b69c99471b50f3253bd59090521e165a8c220bb70e1745785a1db" atom_netlist_id="SHA256:4e2205406816da140db9c7e5bb363ccad2f0e013b40211d967bc48c940be3285">
+<block name="dual_port_ram.net" instance="FPGA_packed_netlist[0]" architecture_id="SHA256:1734fb70f615aa865e8cf20b4e9cd18d6348b7ed53ae5de2dc6585b090009c70" atom_netlist_id="SHA256:20cd9d4e1aa1ba26a7a69e592e1105cba2a40035ca1b691cec2fed79592e292b">
 	<inputs>dual_port_RAM^clk dual_port_RAM^we dual_port_RAM^addr_wr~0 dual_port_RAM^addr_wr~1 dual_port_RAM^addr_rd~0 dual_port_RAM^addr_rd~1 dual_port_RAM^din~0 dual_port_RAM^din~1</inputs>
 	<outputs>out:dual_port_RAM^dout~0 out:dual_port_RAM^dout~1</outputs>
 	<clocks>dual_port_RAM^clk</clocks>
