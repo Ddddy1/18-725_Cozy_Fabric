@@ -7,13 +7,18 @@ module CLB_8x1 (
 	top_cb_out, right_cb_out
 );
     input clk, scan_clk, clb_scan_in, clb_scan_out, clb_scan_en, conn_scan_in, conn_scan_out, conn_scan_en;
-    input [3:0] top_in, bottom_in, top_out, bottom_out;
-    output bottom_clb_in, top_cb_out;
+    input [3:0] top_in, bottom_in;
+    output [3:0] top_out, bottom_out;
+    input bottom_clb_in;
+    output top_cb_out;
 
     //scaling singals here
-    input [31:0] left_in, right_in, left_out, right_out;
-    output [7:0] left_clb_out, left_clb_in, right_sb_in, right_cb_out; 
+    input [31:0] left_in, right_in;
+    output [31:0] left_out, right_out;
+    input [7:0] left_clb_in, right_sb_in;
+    output [7:0] left_clb_out, right_cb_out; 
      
+    //interconnect
     wire [3:0] top_bottom_conn, bottom_top_conn;
     wire cb_conn;
     wire clb_scan_conn, conn_scan_conn;
@@ -21,13 +26,15 @@ module CLB_8x1 (
     
     /*ALL inputs: (Classifeid for the case of vertical expansion)
     //Inferred
-    clk, scan_clk, top_in, bottom_in, top_out, bottom_out, 
+    clk, scan_clk,  
 	clb_scan_en, conn_scan_en
 
-    //One or other
+    //One or the other
     clb_scan_in, clb_scan_out,
     conn_scan_in, conn_scan_out,
     bottom_clb_in, top_cb_out,
+    top_in, bottom_in, 
+    top_out, bottom_out,
 
     //Change index
     left_in, right_in, left_out, right_out, left_clb_out, left_clb_in, right_sb_in, right_cb_out,  */
@@ -74,13 +81,18 @@ module CLB_4x1 (
 	top_cb_out, right_cb_out
 );
     input clk, scan_clk, clb_scan_in, clb_scan_out, clb_scan_en, conn_scan_in, conn_scan_out, conn_scan_en;
-    input [3:0] top_in, bottom_in, top_out, bottom_out;
-    output bottom_clb_in, top_cb_out;
+    input [3:0] top_in, bottom_in;
+    output [3:0] top_out, bottom_out;
+    input bottom_clb_in;
+    output top_cb_out;
 
     //scaling singals here
-    input [15:0] left_in, right_in, left_out, right_out;
-    output [3:0] left_clb_out, left_clb_in, right_sb_in, right_cb_out; 
+    input [15:0] left_in, right_in;
+    output [15:0] left_out, right_out;
+    input [3:0] left_clb_in, right_sb_in;
+    output [3:0] left_clb_out, right_cb_out; 
      
+    //interconnect
     wire [3:0] top_bottom_conn, bottom_top_conn;
     wire cb_conn;
     wire clb_scan_conn, conn_scan_conn;
@@ -88,13 +100,15 @@ module CLB_4x1 (
     
     /*ALL inputs: (Classifeid for the case of vertical expansion)
     //Inferred
-    clk, scan_clk, top_in, bottom_in, top_out, bottom_out, 
+    clk, scan_clk,  
 	clb_scan_en, conn_scan_en
 
-    //One or other
+    //One or the other
     clb_scan_in, clb_scan_out,
     conn_scan_in, conn_scan_out,
     bottom_clb_in, top_cb_out,
+    top_in, bottom_in, 
+    top_out, bottom_out,
 
     //Change index
     left_in, right_in, left_out, right_out, left_clb_out, left_clb_in, right_sb_in, right_cb_out,  */
@@ -142,14 +156,19 @@ module CLB_2x1 (
 	top_cb_out, right_cb_out
 );
     input clk, scan_clk, clb_scan_in, clb_scan_out, clb_scan_en, conn_scan_in, conn_scan_out, conn_scan_en;
-    input [3:0] top_in, bottom_in, top_out, bottom_out;
-    
-    output bottom_clb_in, top_cb_out;
+    input [3:0] top_in, bottom_in;
+    output [3:0] top_out, bottom_out;
+    input bottom_clb_in;
+    output top_cb_out;
 
     //scaling singals here
-    input [7:0] left_in, right_in, left_out, right_out;
-    output [1:0] left_clb_out, left_clb_in, right_sb_in, right_cb_out;  
-     
+    input [7:0] left_in, right_in;
+    output [7:0] left_out, right_out;
+    input [1:0] left_clb_in, right_sb_in;
+    output [1:0] left_clb_out, right_cb_out; 
+    
+
+    //interconnect 
     wire [3:0] top_bottom_conn, bottom_top_conn;
     wire cb_conn;
     wire clb_scan_conn, conn_scan_conn;
@@ -157,13 +176,15 @@ module CLB_2x1 (
     
     /*ALL inputs: (Classifeid for the case of vertical expansion)
     //Inferred
-    clk, scan_clk, top_in, bottom_in, top_out, bottom_out, 
+    clk, scan_clk,  
 	clb_scan_en, conn_scan_en
 
-    //One or other
+    //One or the other
     clb_scan_in, clb_scan_out,
     conn_scan_in, conn_scan_out,
     bottom_clb_in, top_cb_out,
+    top_in, bottom_in, 
+    top_out, bottom_out,
 
     //Change index
     left_in, right_in, left_out, right_out, left_clb_out, left_clb_in, right_sb_in, right_cb_out,  */
