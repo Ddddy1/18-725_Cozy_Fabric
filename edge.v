@@ -1,4 +1,4 @@
-module edge_pb(right_in, right_out, top_in, top_out, 
+module fpga_edge(right_in, right_out, top_in, top_out, 
     right_sb_in, right_clb_in, top_clb_in,
     scan_clk, conn_scan_en, conn_scan_in, conn_scan_out, fpga_in, fpga_out
 );
@@ -50,7 +50,7 @@ module edge_pb(right_in, right_out, top_in, top_out,
 	connection_block #(CHANNEL_ONEWAY_WIDTH) inst_cb_0(
 		.clk(scan_clk), 
 		.tracks_0(sb_1_sb_0), 
-		.tracks_1(sb_top_sb_bottom), 
+		.tracks_1(sb_0_sb_1), 
 		.out_0(fpga_out[0]), 
 		.out_1(right_clb_in[0]), 
 		.scan_in(conn_scan_conn_0), 
