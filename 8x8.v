@@ -4,6 +4,7 @@
     [7:0] left_clb_in, bottom_clb_in (to edge cb)
     
 */
+`include "8x1.v"
 module CLB_8x8 (
     clk, scan_clk, clb_scan_in, clb_scan_out, clb_scan_en, conn_scan_in, conn_scan_out, conn_scan_en,
     left_in, right_in, top_in, bottom_in, left_out, right_out, top_out, bottom_out, 
@@ -11,7 +12,8 @@ module CLB_8x8 (
 	top_cb_out, right_cb_out
 );
     //clk + scan chain
-    input clk, scan_clk, clb_scan_in, clb_scan_out, clb_scan_en, conn_scan_in, conn_scan_out, conn_scan_en;
+    input clk, scan_clk, clb_scan_in,clb_scan_en, conn_scan_in, conn_scan_en;
+    output clb_scan_out, conn_scan_out;
     
     //scaling singals for vertical expansion, non-scaling for horizontal 
     input [31:0] left_in, right_in;
@@ -27,7 +29,7 @@ module CLB_8x8 (
 
     //interconnect
     wire [31:0] left_right_conn, right_left_conn;
-    wire [8:0] cb_conn, sb_conn;
+    wire [7:0] cb_conn, sb_conn;
     wire clb_scan_conn, conn_scan_conn;
 
     /*ALL inputs: (Classifeid for the case of horizontal expansion)
@@ -87,8 +89,8 @@ module CLB_8x4 (
 	top_cb_out, right_cb_out
 );
     //clk + scan chain
-    input clk, scan_clk, clb_scan_in, clb_scan_out, clb_scan_en, conn_scan_in, conn_scan_out, conn_scan_en;
-    
+    input clk, scan_clk, clb_scan_in,clb_scan_en, conn_scan_in, conn_scan_en;
+    output clb_scan_out, conn_scan_out;
     //scaling singals for vertical expansion, non-scaling for horizontal 
     input [31:0] left_in, right_in;
     output [31:0] left_out, right_out;
@@ -103,7 +105,7 @@ module CLB_8x4 (
 
     //interconnect 
     wire [31:0] left_right_conn, right_left_conn;
-    wire [8:0] cb_conn, sb_conn;
+    wire [7:0] cb_conn, sb_conn;
     wire clb_scan_conn, conn_scan_conn;
 
     /*ALL inputs: (Classifeid for the case of horizontal expansion)
@@ -164,7 +166,8 @@ module CLB_8x2 (
 	top_cb_out, right_cb_out
 );
     //clk + scan chain
-    input clk, scan_clk, clb_scan_in, clb_scan_out, clb_scan_en, conn_scan_in, conn_scan_out, conn_scan_en;
+    input clk, scan_clk, clb_scan_in,clb_scan_en, conn_scan_in, conn_scan_en;
+    output clb_scan_out, conn_scan_out;
     
     //scaling singals for vertical expansion, non-scaling for horizontal 
     input [31:0] left_in, right_in;
@@ -180,7 +183,7 @@ module CLB_8x2 (
 
     //interconnect
     wire [31:0] left_right_conn, right_left_conn;
-    wire [8:0] cb_conn, sb_conn;
+    wire [7:0] cb_conn, sb_conn;
     wire clb_scan_conn, conn_scan_conn;
     
     /*ALL inputs: (Classifeid for the case of horizontal expansion)

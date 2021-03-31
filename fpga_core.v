@@ -1,3 +1,5 @@
+`include "edge.v"
+
 module fpga_core(clk, scan_clk, fpga_in, fpga_out,
  clb_scan_in, clb_scan_out, clb_scan_en, conn_scan_in, conn_scan_out, conn_scan_en);
 
@@ -17,7 +19,7 @@ module fpga_core(clk, scan_clk, fpga_in, fpga_out,
         .top_in(array_bottom_edge_top), 
         .top_out(edge_top_array_bottom), 
         .right_sb_in(clb_out_sb_in), 
-        .right_clb_in(edge_cb_clb_left), 
+        .right_clb_in(left_cb_right_clb), 
         .top_clb_in(bottom_cb_top_clb),
         .scan_clk(scan_clk), 
         .conn_scan_en(scan_en), 

@@ -1,4 +1,4 @@
-
+`include "tile.v"
 
 module CLB_8x1 (
     clk, scan_clk, clb_scan_in, clb_scan_out, clb_scan_en, conn_scan_in, conn_scan_out, conn_scan_en,
@@ -6,7 +6,8 @@ module CLB_8x1 (
 	left_clb_out, left_clb_in, bottom_clb_in, right_sb_in, 
 	top_cb_out, right_cb_out
 );
-    input clk, scan_clk, clb_scan_in, clb_scan_out, clb_scan_en, conn_scan_in, conn_scan_out, conn_scan_en;
+    input clk, scan_clk, clb_scan_in, clb_scan_en, conn_scan_in,  conn_scan_en;
+    output clb_scan_out, conn_scan_out; 
     input [3:0] top_in, bottom_in;
     output [3:0] top_out, bottom_out;
     input bottom_clb_in;
@@ -80,7 +81,8 @@ module CLB_4x1 (
 	left_clb_out, left_clb_in, bottom_clb_in, right_sb_in, 
 	top_cb_out, right_cb_out
 );
-    input clk, scan_clk, clb_scan_in, clb_scan_out, clb_scan_en, conn_scan_in, conn_scan_out, conn_scan_en;
+    input clk, scan_clk, clb_scan_in, clb_scan_en, conn_scan_in,  conn_scan_en;
+    output clb_scan_out, conn_scan_out; 
     input [3:0] top_in, bottom_in;
     output [3:0] top_out, bottom_out;
     input bottom_clb_in;
@@ -155,7 +157,8 @@ module CLB_2x1 (
 	left_clb_out, left_clb_in, bottom_clb_in, right_sb_in, 
 	top_cb_out, right_cb_out
 );
-    input clk, scan_clk, clb_scan_in, clb_scan_out, clb_scan_en, conn_scan_in, conn_scan_out, conn_scan_en;
+    input clk, scan_clk, clb_scan_in, clb_scan_en, conn_scan_in,  conn_scan_en;
+    output clb_scan_out, conn_scan_out; 
     input [3:0] top_in, bottom_in;
     output [3:0] top_out, bottom_out;
     input bottom_clb_in;
@@ -203,6 +206,7 @@ module CLB_2x1 (
         .bottom_clb_in(cb_conn),
 		.clb_scan_out(clb_scan_conn), 
 		.conn_scan_out(conn_scan_conn), 
+		.test_out_x4(),
 	    .*);
 
     tile inst_tile_bottom(
@@ -219,6 +223,7 @@ module CLB_2x1 (
         .top_cb_out(cb_conn),
 		.clb_scan_in(clb_scan_conn), 
 		.conn_scan_in(conn_scan_conn), 
+		.test_out_x4(),
 	    .*
     );
 
