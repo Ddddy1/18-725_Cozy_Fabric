@@ -1,4 +1,5 @@
-`include "edge.v"
+`include "fpga_edge.v"
+`include "tile_8x8.v"
 
 module fpga_core(clk, scan_clk, fpga_in, fpga_out,
  clb_scan_in, clb_scan_out, clb_scan_en, conn_scan_in, conn_scan_out, conn_scan_en);
@@ -13,6 +14,7 @@ module fpga_core(clk, scan_clk, fpga_in, fpga_out,
 
     wire conn_scan_conn;
 
+    // fpga_in and fpga_out are mapped inversely to follow the pin order
     fpga_edge inst_edge(
         .right_in(array_left_edge_right), 
         .right_out(edge_right_arry_left), 
@@ -22,14 +24,14 @@ module fpga_core(clk, scan_clk, fpga_in, fpga_out,
         .right_clb_in(left_cb_right_clb), 
         .top_clb_in(bottom_cb_top_clb),
         .scan_clk(scan_clk), 
-        .conn_scan_en(scan_en), 
+        .conn_scan_en(conn_scan_en), 
         .conn_scan_in(conn_scan_in), 
         .conn_scan_out(conn_scan_conn), 
-        .fpga_in(fpga_in), 
-        .fpga_out(fpga_out)
+        .fpga_in({fpga_in[0], fpga_in[1], fpga_in[2], fpga_in[3], fpga_in[4], fpga_in[5], fpga_in[6], fpga_in[7], fpga_in[8], fpga_in[9]}), 
+        .fpga_out({fpga_out[0], fpga_out[1], fpga_out[2], fpga_out[3], fpga_out[4], fpga_out[5], fpga_out[6], fpga_out[7], fpga_out[8], fpga_out[9]})
     );
 
-    CLB_8x8 inst_CLB_8x8 (
+    tile_8x8 inst_tile_8x8 (
         .clk(clk), 
         .scan_clk(scan_clk), 
         .clb_scan_in(clb_scan_in), 
@@ -53,4 +55,12 @@ module fpga_core(clk, scan_clk, fpga_in, fpga_out,
 	    .top_cb_out(), 
         .right_cb_out()
     );
+    
+`ifdef COCOTB_SIM
+	initial begin
+  		$dumpfile ("fpga_core.vcd");
+ 	 	$dumpvars (0, fpga_core);
+  		#1;
+	end
+`endif
 endmodule
