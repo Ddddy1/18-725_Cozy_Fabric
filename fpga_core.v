@@ -2,9 +2,9 @@
 `include "tile_8x8.v"
 
 module fpga_core(clk, scan_clk, fpga_in, fpga_out,
- clb_scan_in, clb_scan_out, clb_scan_en, conn_scan_in, conn_scan_out, conn_scan_en);
+ clb_scan_in, clb_scan_out, clb_scan_en, conn_scan_in, conn_scan_out, conn_scan_en, reset);
 
-    input clk, scan_clk, clb_scan_in, clb_scan_en, conn_scan_in, conn_scan_en;
+    input clk, scan_clk, clb_scan_in, clb_scan_en, conn_scan_in, conn_scan_en, reset;
     output clb_scan_out, conn_scan_out;
     input[9:0] fpga_in;
     output [9:0] fpga_out;
@@ -53,7 +53,8 @@ module fpga_core(clk, scan_clk, fpga_in, fpga_out,
         .bottom_clb_in(bottom_cb_top_clb),
         .right_sb_in(), 
 	    .top_cb_out(), 
-        .right_cb_out()
+        .right_cb_out(),
+        .reset(reset)
     );
     
 `ifdef COCOTB_SIM
