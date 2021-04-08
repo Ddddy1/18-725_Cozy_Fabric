@@ -63,14 +63,7 @@
       <corners type="EMPTY" priority="101"/>
       
       <!--COZY-FABRIC SPECIFIC: right edge no 'io' blocks -->
-      <single type="EMPTY" x="9" y="1" priority="101"/>
-      <single type="EMPTY" x="9" y="2" priority="101"/>
-      <single type="EMPTY" x="9" y="3" priority="101"/>
-      <single type="EMPTY" x="9" y="4" priority="101"/>
-      <single type="EMPTY" x="9" y="5" priority="101"/>
-      <single type="EMPTY" x="9" y="6" priority="101"/>
-      <single type="EMPTY" x="9" y="7" priority="101"/>
-      <single type="EMPTY" x="9" y="8" priority="101"/>
+     
       
       <!--COZY-FABRIC SPECIFIC: top edge no 'io' blocks -->
       <single type="EMPTY" x="1" y="9" priority="101"/>
@@ -79,8 +72,7 @@
       <single type="EMPTY" x="4" y="9" priority="101"/>
       <single type="EMPTY" x="5" y="9" priority="101"/>
       <single type="EMPTY" x="6" y="9" priority="101"/>
-      <single type="EMPTY" x="7" y="9" priority="101"/>
-      <single type="EMPTY" x="8" y="9" priority="101"/>
+
       
       <!--COZY-FABRIC SPECIFIC: bottom edge has only 2 'io' blocks -->
       <single type="EMPTY" x="3" y="0" priority="101"/>
